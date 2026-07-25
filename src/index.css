@@ -1,0 +1,73 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #1b2a56;
+  --color-navy-deep: #101a38;
+  --color-orange: #f47b20;
+  --color-steel: #8a9099;
+  --color-mist: #f4f6f8;
+  --color-white: #ffffff;
+
+  --font-sans: 'Public Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-brand: 8px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-navy-deep antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    @apply bg-orange/25 text-navy-deep;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-orange);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-100 focus:rounded-brand focus:bg-navy focus:px-4 focus:py-2 focus:text-white;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .cable-backdrop {
+    background-image: repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-navy) 12%, transparent) 0,
+      color-mix(in srgb, var(--color-navy) 12%, transparent) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+  }
+}
