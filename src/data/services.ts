@@ -1,14 +1,8 @@
 import {
   Cable,
-  Baby,
-  Layers,
-  Squirrel,
   Bird,
-  Fan,
-  Feather,
-  ShieldPlus,
-  PawPrint,
-  PanelTop,
+  ShieldCheck,
+  Shirt,
   Target,
   type LucideIcon,
 } from 'lucide-react'
@@ -17,7 +11,7 @@ export type Service = {
   slug: string
   name: string
   shortName: string
-  category: 'Invisible Grills' | 'Safety & Pigeon Nets'
+  category: 'Invisible Grills' | 'Safety Nets' | 'Pigeon Nets' | 'Cloth Hangers' | 'Sports Nets'
   metaTitle: string
   metaDescription: string
   icon: LucideIcon
@@ -33,20 +27,20 @@ export type Service = {
 }
 
 export const services: Service[] = [
+  // ── 1. Invisible Grills ──────────────────────────────────────────────────
   {
     slug: 'invisible-grills',
-    name: 'Invisible Grills for Balcony',
+    name: 'Invisible Grills',
     shortName: 'Invisible Grills',
     category: 'Invisible Grills',
     metaTitle: 'Invisible Grills for Balcony in Chennai | Jemima',
     metaDescription:
-      'SS 304 cable invisible grills for balconies in Chennai. Unbroken view, child-safe 89mm spacing, free survey. Call +91 78100 40329 for a quote today.',
+      'SS 316 cable invisible grills for balconies in Chennai. Unbroken view, child-safe 89mm spacing, free survey. Call +91 78100 40329 for a quote today.',
     icon: Cable,
     heroTagline: 'Balconies you can see through. Not fall through.',
     intro: [
       'An invisible grill is a set of vertical stainless steel cables, tensioned between a top and bottom aluminium channel, fixed across your balcony or window opening. From two metres away the balcony looks open. Up close, nobody is going over that railing.',
-      "We use 2mm-3mm SS 304 grade cable — the same grade used in marine railings — because Chennai's coastal air eats cheaper steel within two monsoons. Cables are spaced at a fixed 89mm (3.5 inch) gap, tight enough that a child cannot slip a limb through, and tensioned with turnbuckles so the whole system stays rigid, not springy.",
-      "This is the product families in this business are built around. Most of our other pages — children's safety grills, monkey grills, stainless steel grills — are variations of this same cable system, adjusted for who or what you are keeping out.",
+      'We use 2mm–3mm SS 316 grade cable — the same grade used in marine railings — because Chennai\'s coastal air eats cheaper steel within two monsoons. Cables are spaced at a fixed 89mm (3.5 inch) gap, tight enough that a child cannot slip a limb through, and tensioned with turnbuckles so the whole system stays rigid, not springy.',
     ],
     bestFor: [
       "Apartment balconies where you don't want to lose the view or the light",
@@ -55,14 +49,10 @@ export const services: Service[] = [
       'Renovation jobs replacing old, rusted mesh grills',
     ],
     materials: [
-      { label: 'Cable material', value: 'SS 304 grade, 7x7 strand, 2mm–3mm dia.' },
-      { label: 'Vertical spacing', value: '89mm (3.5") fixed, child-safe' },
+      { label: 'Cable material', value: 'SS 316 grade, 7×7 strand, 2mm–3mm dia.' },
+      { label: 'Vertical spacing', value: '89mm (3.5″) fixed, child-safe' },
       { label: 'Frame / channel', value: 'Powder-coated aluminium, 4 colour options' },
       { label: 'Tensioning', value: 'Stainless steel turnbuckles, re-tightenable' },
-      {
-        label: 'Load rating',
-        value: 'Rated for sustained lateral push, not designed as a climbing structure',
-      },
       { label: 'Warranty', value: '5 years on cable against rust, 1 year on installation' },
     ],
     benefits: [
@@ -76,7 +66,7 @@ export const services: Service[] = [
       },
       {
         title: 'Handles Chennai humidity',
-        body: '304-grade steel is corrosion resistant near the coast — 202 grade and painted MS both start spotting within a year here.',
+        body: 'SS 316 grade steel resists corrosion near the coast — 202 grade and painted MS both start spotting within a year here.',
       },
       {
         title: 'Adjustable after installation',
@@ -86,7 +76,7 @@ export const services: Service[] = [
     process: [
       {
         step: 'Site survey',
-        body: 'We measure your balcony opening, check the parapet height and ceiling depth, and confirm if any AC pipe or drain outlet needs routing around. Usually 20–30 minutes, same day or next day.',
+        body: 'We measure your balcony opening, check the parapet height and ceiling depth. Usually 20–30 minutes, same day or next day.',
       },
       {
         step: 'Quote same day',
@@ -94,11 +84,11 @@ export const services: Service[] = [
       },
       {
         step: 'Installation',
-        body: 'A 2-person team fits the top and bottom channel, runs and tensions each cable, and cleans up. Most balconies (up to 10 ft) are done in 3–4 hours.',
+        body: 'A 2-person team fits the top and bottom channel, runs and tensions each cable, and cleans up. Most balconies done in 3–4 hours.',
       },
       {
         step: 'Warranty & aftercare',
-        body: 'We log your installation with cable batch and length. If a cable loosens or a channel needs re-sealing, call us and we re-tension free within the warranty period.',
+        body: 'If a cable loosens or a channel needs re-sealing, call us and we re-tension free within the warranty period.',
       },
     ],
     faqs: [
@@ -112,401 +102,48 @@ export const services: Service[] = [
       },
       {
         q: 'Is invisible grill as strong as a normal MS grill?',
-        a: 'It resists lateral push and prevents falls and limb entrapment, which is what balcony safety grills are for. It is not designed to be climbed on or used as a ladder — no grill type should be.',
-      },
-      {
-        q: 'Does drilling damage the building exterior?',
-        a: 'Fixing points are small anchor bolts into the parapet wall and ceiling soffit — not through tiles or waterproofing membrane.',
+        a: 'It resists lateral push and prevents falls and limb entrapment. It is not designed to be climbed on — no grill type should be.',
       },
       {
         q: 'How long does one balcony take?',
         a: 'A standard 8–10 ft balcony opening takes 3–4 hours including tensioning and cleanup.',
       },
-      {
-        q: 'Do you install in villas as well as apartments?',
-        a: 'Yes — villas, apartments, duplexes and independent houses. The survey process is the same either way.',
-      },
     ],
-    relatedSlugs: ['children-safety-grills', 'stainless-steel-grills', 'balcony-safety-nets'],
+    relatedSlugs: ['pigeon-nets', 'safety-nets', 'sports-nets'],
     gallery: [
-      {
-        src: '/gallery/grill-pattern-1.svg',
-        alt: 'Invisible grill cable system on a balcony, front view',
-      },
-      {
-        src: '/gallery/grill-pattern-2.svg',
-        alt: 'Invisible grill installed at a balcony corner, cables tensioned top to bottom',
-      },
+      { src: '/invisible-grill-2-1.webp', alt: 'Invisible grill installed on a balcony' },
+      { src: '/invisible-grill-banner.webp', alt: 'Invisible cable grill on a high-rise balcony' },
+      { src: '/Invisible-Grill-Staircase4.webp', alt: 'Invisible grill fitted on a staircase opening' },
+      { src: '/Invisiblegrillsforstairs-841x1024-1.png', alt: 'Invisible grills for stairs — front view' },
     ],
   },
+
+  // ── 2. Pigeon Nets ───────────────────────────────────────────────────────
   {
-    slug: 'children-safety-grills',
-    name: 'Children Safety Grills',
-    shortName: 'Children Safety Grills',
-    category: 'Invisible Grills',
-    metaTitle: 'Children Safety Grills for Windows & Balconies | Chennai',
+    slug: 'pigeon-nets',
+    name: 'Pigeon Nets',
+    shortName: 'Pigeon Nets',
+    category: 'Pigeon Nets',
+    metaTitle: 'Pigeon Net Installation in Chennai | Jemima',
     metaDescription:
-      'Cable safety grills built to child-safe spacing for windows and balconies in Chennai apartments. Fast install, free survey. WhatsApp +91 78100 40329.',
-    icon: Baby,
-    heroTagline: 'Ten minutes of distraction is all it takes. Close that gap for good.',
-    intro: [
-      'Most balcony falls involving children happen in homes where the parents assumed the railing was "high enough". A toddler doesn\'t fall over a railing — they climb through the gap in it, or through a window with a low sill. Standard building railings in Tamil Nadu are built to code for adults, not for a two-year-old\'s shoulder width.',
-      "This page is specifically about closing that gap on windows and balconies where young children spend time unsupervised for even a few minutes — kitchen windows, bedroom windows facing a compound wall, and balconies attached to a child's room. We use the same 304-grade cable system as our standard invisible grill, but survey and quote it with the child's reach and grip in mind, not just the opening size.",
-      'If you have a crawling infant or a child under six at home, this is usually the first thing to fix before anything else in the flat — before furniture, before curtains.',
-    ],
-    bestFor: [
-      'Parents of children aged 1–8, especially in flats above the ground floor',
-      'Kitchen and bedroom windows with a sill low enough for a child to climb',
-      "Balconies attached to a nursery or children's bedroom",
-      "Grandparents' homes where children visit but the house wasn't built with kids in mind",
-    ],
-    materials: [
-      { label: 'Cable material', value: 'SS 304 grade, 2mm dia., smooth finish (no burrs)' },
-      { label: 'Vertical spacing', value: '89mm (3.5") — tested against limb and head entrapment' },
-      {
-        label: 'Window variant',
-        value: 'Fixed frame within the window grille opening, no swing gap',
-      },
-      { label: 'Corner treatment', value: 'Rounded channel ends, no sharp edges at child height' },
-      { label: 'Fixing', value: 'Anchored into wall masonry above and below the opening' },
-      { label: 'Warranty', value: '5 years on cable, 1 year on installation' },
-    ],
-    benefits: [
-      {
-        title: 'Closes the exact gap a child uses',
-        body: 'We check spacing against limb entrapment, not just "looks safe" — 89mm is tight enough that a small child cannot push through or get a leg wedged.',
-      },
-      {
-        title: 'No sharp edges at child height',
-        body: "Channel ends and corner brackets are rounded and sit flush, so there's nothing for a child to catch a finger or cheek on.",
-      },
-      {
-        title: 'Works on windows, not just balconies',
-        body: 'Ground-floor and low-sill windows get the same fixed cable treatment as balconies — a common gap parents miss.',
-      },
-      {
-        title: "Doesn't block emergency exit",
-        body: 'Grills are fitted so an adult can still open the window or step onto the balcony for cleaning or emergencies — nothing is permanently sealed shut.',
-      },
-    ],
-    process: [
-      {
-        step: 'Site survey',
-        body: "We check every window and balcony a child has access to, not just the one you called about — low sills get flagged even if you didn't ask.",
-      },
-      {
-        step: 'Quote same day',
-        body: "A room-by-room quote so you can prioritise the child's bedroom and the kitchen first if budget means phasing the work.",
-      },
-      {
-        step: 'Installation',
-        body: 'Each opening takes 1–3 hours depending on size. We test the finished grill by hand before we leave — pushing on cables the way a child would.',
-      },
-      {
-        step: 'Warranty & aftercare',
-        body: "Free re-tensioning within warranty, and we'll re-check spacing at no charge if your child is unusually small for their age or has a younger sibling on the way.",
-      },
-    ],
-    faqs: [
-      {
-        q: 'What age group is the 89mm spacing safe for?',
-        a: 'It is built to prevent limb and torso entrapment for children from infancy through around age 8–9, which covers the age range most falls happen in.',
-      },
-      {
-        q: 'Can this be fitted on rented flats?',
-        a: 'Yes, though we anchor into the wall/parapet, which is a permanent fixing. If you need a non-drill option for a rental, ask us about the safety net alternative instead.',
-      },
-      {
-        q: 'Will my child be able to push the cables apart?',
-        a: "No — the cables are tensioned taut with turnbuckles, not loose strands, so they don't flex open under hand pressure.",
-      },
-      {
-        q: 'Do you cover windows as well as balconies?',
-        a: 'Yes, this is one of the most requested parts of this service — kitchen and bedroom windows with low sills.',
-      },
-      {
-        q: 'How fast can this be installed if we need it urgently?',
-        a: "If you tell us it's for a young child, we prioritise the survey visit, usually within 24 hours in Chennai.",
-      },
-      {
-        q: 'Is a net safer than a grill for kids?',
-        a: "Both work. Grills keep the view open and suit balconies you use daily; nets are better where you want zero drilling or a softer barrier. We'll tell you honestly which fits your flat.",
-      },
-    ],
-    relatedSlugs: ['invisible-grills', 'children-safety-nets', 'balcony-safety-nets'],
-    gallery: [
-      {
-        src: '/gallery/grill-pattern-2.svg',
-        alt: 'Child-safe cable grill fitted on a window opening',
-      },
-      {
-        src: '/gallery/grill-pattern-1.svg',
-        alt: 'Cable grill with 3.5 inch spacing on a balcony',
-      },
-    ],
-  },
-  {
-    slug: 'stainless-steel-grills',
-    name: 'Stainless Steel Grills',
-    shortName: 'Stainless Steel Grills',
-    category: 'Invisible Grills',
-    metaTitle: 'Stainless Steel Safety Grills — Chennai Fabrication',
-    metaDescription:
-      'SS 304 grade grills for windows, balconies, staircases and duct openings. Rust-proof in coastal Chennai weather. Free measurement visit — call today.',
-    icon: Layers,
-    heroTagline: '304 grade, not 202. The difference shows up in year two.',
-    intro: [
-      'Not every grill on your flat needs to be an invisible cable system. Staircase openings, duct covers, terrace parapets and some windows are better served by a solid stainless steel grill — welded, powder-coated or natural finish, fabricated to the exact opening. This page is about that side of the work: steel grade, fabrication and fitting, independent of the cable-and-channel product.',
-      'The one decision that matters most here is steel grade. A lot of grills sold as "stainless steel" in Chennai are actually 202 grade — cheaper, and it will show tea-coloured rust spots within a year in coastal humidity. We fabricate in 304 grade as standard, the same grade used in kitchen equipment and marine fittings, because it is the grade that actually resists corrosion in this climate.',
-      'We supply and fit these grills for any opening — windows, duct covers, compound gates, staircase railings — measured and welded to fit, not sold off a standard size.',
-    ],
-    bestFor: [
-      'Staircase and terrace parapet railings needing a solid, weldable safety barrier',
-      'Duct and utility shaft covers that need a rigid grill, not a flexible net',
-      'Homeowners who have been burnt by 202-grade grills rusting within a year',
-      'Anyone comparing a solid grill against the cable-based invisible grill system',
-    ],
-    materials: [
-      { label: 'Steel grade', value: 'SS 304 (marine/food grade), 202 available on request' },
-      { label: 'Bar/pipe sizes', value: '12mm–20mm square or round bar, fabricated to opening' },
-      {
-        label: 'Finish',
-        value: 'Natural brushed steel or powder-coated (matte black, bronze, white)',
-      },
-      { label: 'Welding', value: 'TIG-welded joints, ground smooth, no visible weld beading' },
-      { label: 'Fixing', value: 'Anchor-bolted frame into masonry or existing grill opening' },
-      {
-        label: 'Warranty',
-        value: '7 years against rust on 304 grade, 1 year on fabrication and fitting',
-      },
-    ],
-    benefits: [
-      {
-        title: "Actually resists Chennai's coastal air",
-        body: '304 grade holds up where cheaper 202 grade and painted mild steel both start rusting — painted MS chips and rusts from the scratch outward within one monsoon.',
-      },
-      {
-        title: 'Fabricated to your exact opening',
-        body: 'No standard-size panels bolted in with gaps — every grill is measured and welded to the actual opening, indoors or on the terrace.',
-      },
-      {
-        title: "Rigid where a cable system isn't the right fit",
-        body: "Duct covers, gates and some staircases need a solid weldable barrier rather than a tensioned cable — we'll tell you honestly which one your opening needs.",
-      },
-      {
-        title: 'Finish options that match your building',
-        body: "Natural steel, matte black or bronze powder coat — fabricated grills don't have to look industrial.",
-      },
-    ],
-    process: [
-      {
-        step: 'Site survey',
-        body: "We measure the exact opening and check what it's for — a staircase railing is specified differently from a duct cover.",
-      },
-      {
-        step: 'Quote same day',
-        body: "Priced per kg of steel and per running foot of welding, with grade (304 vs 202) shown separately so you know exactly what you're paying for.",
-      },
-      {
-        step: 'Fabrication & fitting',
-        body: 'Panels are welded to size at our workshop and fitted on site, ground smooth and finished before we leave.',
-      },
-      {
-        step: 'Warranty & aftercare',
-        body: '7-year rust warranty on 304-grade material; if a weld point ever fails, we come back and fix it under the fabrication warranty.',
-      },
-    ],
-    faqs: [
-      {
-        q: "What's the real difference between 304 and 202 grade?",
-        a: '304 grade has higher nickel content, which is what actually resists rust in humid, coastal air. 202 is cheaper and more common in mass-produced grills, but stains and pits faster in Chennai specifically.',
-      },
-      {
-        q: 'Can you match my existing grill design?',
-        a: "Yes, bring a photo or we'll take one on survey — we fabricate to match existing patterns for extensions or replacements.",
-      },
-      {
-        q: 'Is this the same as the invisible grill product?',
-        a: 'No — this is solid welded steel bar/pipe, better for duct covers, gates and some staircases. Invisible grill is a tensioned cable system, better for balconies where you want the view kept open.',
-      },
-      {
-        q: 'Do you do powder coating on site or off site?',
-        a: 'Powder coating is done at our workshop before fitting; on-site work is limited to touch-up paint if needed.',
-      },
-      {
-        q: 'How long does fabrication take?',
-        a: 'Simple openings: 2–3 days from survey to fitting. Larger or custom jobs: 5–7 days depending on welding volume.',
-      },
-      {
-        q: 'Do you offer natural (unpainted) finish?',
-        a: "Yes — brushed natural 304 steel is a standard finish option and doesn't need repainting over time like powder coat can.",
-      },
-    ],
-    relatedSlugs: ['invisible-grills', 'duct-area-pigeon-nets', 'monkey-safety-grills'],
-    gallery: [
-      {
-        src: '/gallery/grill-pattern-1.svg',
-        alt: 'Welded stainless steel grill panel on a window opening',
-      },
-      {
-        src: '/gallery/grill-pattern-2.svg',
-        alt: 'Stainless steel grill fabricated for a staircase opening',
-      },
-    ],
-  },
-  {
-    slug: 'monkey-safety-grills',
-    name: 'Monkey Safety Grills & Nets',
-    shortName: 'Monkey Safety Grills',
-    category: 'Invisible Grills',
-    metaTitle: 'Monkey Safety Grills & Nets for Balconies | Chennai',
-    metaDescription:
-      'Heavy-gauge grills and nets to keep monkeys out of balconies, kitchens and terraces. Locking clips, reinforced mesh. Free survey — call +91 78100 40329.',
-    icon: Squirrel,
-    heroTagline: "A standard net rips. A monkey grill doesn't.",
-    intro: [
-      "If you've had monkeys get onto your balcony or terrace, you already know a normal safety net won't hold — monkeys are strong enough to tear standard mesh, and smart enough to work a simple clip or latch loose. This is a different specification from our regular child-safety net or invisible grill work, and we quote and fit it differently.",
-      "For balconies and windows, we usually recommend the solid stainless steel grill over a net here, because monkeys can rip net fabric but can't pull apart welded steel bar. Where a net is unavoidable — large terrace openings, for instance — we use a heavier gauge mesh with reinforced edge rope and conceal or lock every clip point so it can't be worked open from outside.",
-      "This is a common request in Chennai's southern and IT-corridor suburbs near tree cover and hills, and in gated communities backing onto wooded compound walls.",
-    ],
-    bestFor: [
-      'Flats and villas near tree cover, hills, or wooded compound walls with regular monkey visits',
-      'Kitchens and balconies where monkeys have already entered and taken food',
-      'Terraces used for drying food items (papad, pickles) that attract monkeys',
-      'Housing societies with a recurring monkey problem across multiple blocks',
-    ],
-    materials: [
-      {
-        label: 'Grill option',
-        value: 'SS 304, 16mm+ bar, welded (recommended for balconies/windows)',
-      },
-      {
-        label: 'Net option',
-        value:
-          'Heavy-gauge HDPE, reinforced edge rope, higher breaking strength than standard bird net',
-      },
-      { label: 'Fixing clips', value: 'Concealed or lockable, not openable by hand from outside' },
-      { label: 'Spacing', value: 'Tight enough to prevent a hand or paw reaching through' },
-      {
-        label: 'Coverage',
-        value:
-          'Full opening including any gap above cupboards or false ceiling ducts monkeys use to enter',
-      },
-      {
-        label: 'Warranty',
-        value: '2 years on net material, 7 years on 304-grade grill, 1 year on installation',
-      },
-    ],
-    benefits: [
-      {
-        title: 'Built for an animal that can pull and pry',
-        body: 'Reinforced mesh and welded bar options are specified to resist tearing and prying, not just to look like a barrier.',
-      },
-      {
-        title: "Clips a monkey can't work open",
-        body: 'Fixing points are concealed or use lockable clips rather than simple hooks a monkey can learn to lift.',
-      },
-      {
-        title: 'We check every entry point, not just the balcony',
-        body: 'Monkeys use gaps most people miss — AC duct openings, gaps above sliding windows, false ceiling vents. Survey covers all of them.',
-      },
-      {
-        title: 'Honest recommendation between grill and net',
-        body: "We'll tell you when a solid grill is the right call instead of a net, even though the grill is sometimes the pricier option.",
-      },
-    ],
-    process: [
-      {
-        step: 'Site survey',
-        body: 'We identify every point monkeys are using to access your flat or terrace, not just the obvious balcony opening.',
-      },
-      {
-        step: 'Quote same day',
-        body: "Quote specifies grill vs reinforced net per opening, with reasoning, so you understand what you're paying extra for.",
-      },
-      {
-        step: 'Installation',
-        body: 'Welded grills are fitted and ground smooth; nets are fitted with concealed, lockable clip points at every anchor.',
-      },
-      {
-        step: 'Warranty & aftercare',
-        body: 'If monkeys manage to damage a fitted net or work a clip loose within warranty, we repair or upgrade the fixing at no charge.',
-      },
-    ],
-    faqs: [
-      {
-        q: 'Can monkeys really tear a normal safety net?',
-        a: "Yes — a fully grown monkey is strong enough to rip standard-gauge HDPE net over time, especially at the edge and clip points. That's why we use a heavier gauge and reinforce the edges for this job.",
-      },
-      {
-        q: 'Is a grill better than a net for a monkey problem?',
-        a: "For balconies and windows, usually yes — welded steel can't be torn the way net fabric can. We only recommend net where a grill isn't practical for the opening.",
-      },
-      {
-        q: 'Will this stop monkeys from entering through the kitchen exhaust or duct?',
-        a: 'We fit a smaller opening cover with the same reinforced approach on duct and exhaust openings monkeys are known to use.',
-      },
-      {
-        q: 'Do monkeys get aggressive during installation?',
-        a: "Our team works during daylight hours when monkey activity is lower and takes standard precautions; we don't handle live animal removal, only the physical barrier.",
-      },
-      {
-        q: 'How is pricing different from a standard safety net?',
-        a: "Reinforced mesh and lockable clips cost more per running foot than standard bird net — we show this as a separate line so it's clear why.",
-      },
-      {
-        q: 'Does this work for terraces used to dry papad or pickles?',
-        a: 'Yes, this is one of the most common reasons societies call us for this specific service.',
-      },
-    ],
-    relatedSlugs: ['stainless-steel-grills', 'anti-bird-safety-nets', 'invisible-grills'],
-    gallery: [
-      {
-        src: '/gallery/grill-pattern-2.svg',
-        alt: 'Heavy-gauge grill fitted against monkey entry on a balcony',
-      },
-      {
-        src: '/gallery/net-pattern-1.svg',
-        alt: 'Reinforced mesh net with locked clip points on a terrace opening',
-      },
-    ],
-  },
-  {
-    slug: 'pigeon-nets-balcony',
-    name: 'Pigeon Net for Balcony',
-    shortName: 'Pigeon Nets (Balcony)',
-    category: 'Safety & Pigeon Nets',
-    metaTitle: 'Pigeon Net for Balcony Installation in Chennai',
-    metaDescription:
-      'Stop pigeons nesting on your balcony. UV-stable HDPE nets, invisible from inside, no drilling into the slab. Free survey — call +91 78100 40329.',
+      'Stop pigeons nesting on your balcony, duct or terrace. UV-stable HDPE nets, invisible from inside, no drilling into the slab. Free survey — call +91 78100 40329.',
     icon: Bird,
     heroTagline: "The droppings stop. The nesting stops. The view doesn't.",
     intro: [
       "Pigeons on a balcony aren't just a mess — droppings carry fungal spores that are a genuine respiratory risk, and once a pair nests in a corner they will keep returning to the same spot for years. A pigeon net is the direct fix: a UV-stabilised HDPE mesh fitted across the balcony opening so birds can't land or nest, without changing how the balcony looks or feels from inside.",
       "We use a fine, high-density knotted mesh — 1.5 inch spacing — small enough that pigeons can't squeeze through but see-through enough that from your sofa you barely notice it's there. The net is fixed to the wall and ceiling edge with stainless steel hooks, not tacked to the railing, so there's no loose flapping in Chennai's pre-monsoon winds.",
-      'This is our single most requested service, mostly from apartment owners on middle and upper floors where pigeons have already started roosting on the AC unit ledge or parapet.',
     ],
     bestFor: [
       'Balconies where pigeons have already started nesting or roosting',
       'Flats with an AC outdoor unit ledge that pigeons use as a perch',
       "Owners who want the mess and noise gone without changing the balcony's look",
-      'Anyone who has tried spikes or reflective tape and found birds simply move around them',
+      'Duct shafts and terrace parapets where birds nest out of reach',
     ],
     materials: [
-      { label: 'Mesh material', value: 'UV-stabilised HDPE, knotted, 1.5" x 1.5" spacing' },
+      { label: 'Mesh material', value: 'UV-stabilised HDPE, knotted, 1.5″ × 1.5″ spacing' },
       { label: 'Border rope', value: '6mm braided nylon edge rope, stitched into the net' },
-      {
-        label: 'Fixing hooks',
-        value: 'Stainless steel L-hooks / eye bolts, spaced 12–18 inches apart',
-      },
-      {
-        label: 'Breaking strength',
-        value: 'Rated well above what wind load or an accidental lean requires',
-      },
-      {
-        label: 'Visibility',
-        value: 'Near-invisible from indoor viewing distance in matching net colour',
-      },
+      { label: 'Fixing hooks', value: 'Stainless steel L-hooks / eye bolts, spaced 12–18 inches apart' },
+      { label: 'Visibility', value: 'Near-invisible from indoor viewing distance in matching net colour' },
       { label: 'Warranty', value: '5 years against UV degradation, 1 year on installation' },
     ],
     benefits: [
@@ -524,7 +161,7 @@ export const services: Service[] = [
       },
       {
         title: 'Cleans up the mess for good',
-        body: "Once birds can't land, droppings, feathers and nesting material stop accumulating — no more scrubbing the parapet every week.",
+        body: "Once birds can't land, droppings, feathers and nesting material stop accumulating.",
       },
     ],
     process: [
@@ -559,410 +196,59 @@ export const services: Service[] = [
         a: 'We route the net around the unit and its pipe run, and can add a small serviceable flap if the technician needs regular access.',
       },
       {
-        q: 'How long before I stop seeing pigeons on the balcony?',
-        a: 'Immediately for that balcony — they simply cannot land inside the netted area from day one.',
-      },
-      {
         q: "Is the net strong enough for Chennai's monsoon wind?",
         a: "Yes, the mesh and hook spacing are rated well above normal wind load; we've fitted these across coastal-facing towers with no issues.",
       },
-      {
-        q: 'Can I remove the net later if I change my mind?',
-        a: 'Yes, it unhooks cleanly without damaging the wall — though almost nobody asks us to take it down once the mess stops.',
-      },
     ],
-    relatedSlugs: ['duct-area-pigeon-nets', 'anti-bird-safety-nets', 'balcony-safety-nets'],
+    relatedSlugs: ['safety-nets', 'invisible-grills', 'sports-nets'],
     gallery: [
-      { src: '/gallery/net-pattern-1.svg', alt: 'Pigeon net fitted across a balcony opening' },
-      {
-        src: '/gallery/net-pattern-2.svg',
-        alt: 'Close view of knotted mesh pigeon net with border rope',
-      },
+      { src: '/gagan-pigeon-netting-service-.jpg.jpeg', alt: 'Pigeon netting service installed on a building' },
+      { src: '/balconny-2.jpg.jpeg', alt: 'Pigeon net fitted across a balcony opening' },
+      { src: '/safety-nets-1.jpg.jpeg', alt: 'Safety net installation on a residential balcony' },
+      { src: '/duct-slider.jpg.jpeg', alt: 'Duct area pigeon net installation' },
     ],
   },
+
+  // ── 3. Safety Nets ───────────────────────────────────────────────────────
   {
-    slug: 'duct-area-pigeon-nets',
-    name: 'Duct Area Pigeon Nets',
-    shortName: 'Duct Area Nets',
-    category: 'Safety & Pigeon Nets',
-    metaTitle: 'Duct Area Pigeon Net Installation | Chennai Apartments',
+    slug: 'safety-nets',
+    name: 'Safety Nets',
+    shortName: 'Safety Nets',
+    category: 'Safety Nets',
+    metaTitle: 'Safety Nets for Balcony, Windows & Staircases | Chennai',
     metaDescription:
-      'Rope-access netting for apartment duct and utility shafts where pigeons nest. Safe access, no balcony disruption. Free survey — +91 78100 40329.',
-    icon: Fan,
-    heroTagline: 'The shaft nobody can reach is exactly where they nest.',
-    intro: [
-      "Duct areas — the narrow utility shafts running down the side of apartment towers for plumbing and ventilation — are a pigeon's ideal nesting spot precisely because residents can't reach them. No balcony access, no ledge to stand on, so the mess and nesting material build up for years until someone complains about the smell or a blockage.",
-      "This isn't a job you do from a balcony with a stick and a roll of net. We fit duct openings using rope access or scaffolding depending on the building's height and shaft width, covering every opening from ground floor to terrace in one pass so pigeons can't simply relocate one floor up.",
-      'This is typically arranged through the housing society or facility manager rather than a single flat owner, since duct shafts run through common areas and affect every floor they pass.',
-    ],
-    bestFor: [
-      'Housing societies with pigeon nesting or blockages inside duct/utility shafts',
-      'Buildings where residents have complained about smell or noise from duct areas',
-      'Facility managers doing a building-wide bird-proofing pass rather than one flat at a time',
-      'Ducts where nesting material has previously caused a drain blockage',
-    ],
-    materials: [
-      {
-        label: 'Mesh material',
-        value: 'UV-stabilised HDPE, 1.5" spacing, higher-tension weave for shaft conditions',
-      },
-      {
-        label: 'Access method',
-        value: 'Rope access (trained technicians) or scaffolding, per building height/shaft width',
-      },
-      { label: 'Fixing', value: 'SS anchors into shaft wall at each floor opening' },
-      {
-        label: 'Coverage',
-        value: 'Every duct opening floor to floor, done in a single continuous pass',
-      },
-      {
-        label: 'Safety compliance',
-        value: 'Openings kept serviceable for plumbers; nothing welded shut over access points',
-      },
-      { label: 'Warranty', value: '5 years against UV degradation, 1 year on installation' },
-    ],
-    benefits: [
-      {
-        title: 'Reaches openings balconies never could',
-        body: "Rope access and scaffolding get our team to shaft openings with no ledge or balcony access — the actual problem area, not just what's visible from a flat.",
-      },
-      {
-        title: 'One pass covers the whole shaft',
-        body: "We net every floor's opening in the same visit so birds can't simply move up or down one level.",
-      },
-      {
-        title: 'Access stays serviceable',
-        body: 'Net panels are fitted so plumbers and maintenance staff can still reach pipework — nothing is permanently sealed.',
-      },
-      {
-        title: 'Removes years of built-up nesting material',
-        body: 'We clear existing nests and debris as part of the job, which often resolves smell complaints and slow drains.',
-      },
-    ],
-    process: [
-      {
-        step: 'Site survey',
-        body: "We inspect the shaft from top to bottom, note the access method needed (rope or scaffold) and flag any existing blockage for the society's plumber.",
-      },
-      {
-        step: 'Quote to the society/FM',
-        body: 'One quote covering the full shaft height, itemised by floor count and access method, usually shared with the facility manager or association.',
-      },
-      {
-        step: 'Installation',
-        body: 'Trained technicians net every opening floor to floor in a single scheduled pass, working around common building hours.',
-      },
-      {
-        step: 'Warranty & aftercare',
-        body: 'Annual inspection visits can be arranged with the society to check for wear before the next monsoon.',
-      },
-    ],
-    faqs: [
-      {
-        q: 'Who normally arranges this — the flat owner or the society?',
-        a: 'Almost always the housing society or facility manager, since the duct shaft is common property running through every floor.',
-      },
-      {
-        q: 'Is rope access safe for a residential building?',
-        a: "Yes — our technicians are trained in rope access work and follow standard safety protocol; we'll explain the method during survey so the society is comfortable with it.",
-      },
-      {
-        q: 'Will this block plumber access to the shaft?',
-        a: 'No — panels are fitted to stay serviceable, so maintenance staff can still reach pipework when needed.',
-      },
-      {
-        q: 'How long does a full building shaft take?',
-        a: 'Depends on height and number of floors — a typical 12–15 floor tower shaft takes 2–3 days for a full pass.',
-      },
-      {
-        q: 'Can this be done one floor at a time instead of the whole shaft?',
-        a: 'It can, but pigeons will simply relocate to the uncovered floors, so we always recommend covering the full shaft in one pass.',
-      },
-      {
-        q: 'Does netting the duct reduce bad smell from the shaft?',
-        a: 'Often yes, since most of the smell comes from accumulated droppings and nesting material, which we clear during installation.',
-      },
-    ],
-    relatedSlugs: ['pigeon-nets-balcony', 'anti-bird-safety-nets', 'stainless-steel-grills'],
-    gallery: [
-      {
-        src: '/gallery/duct-pattern-1.svg',
-        alt: 'Duct shaft cross-section with netted openings at each floor',
-      },
-      { src: '/gallery/net-pattern-2.svg', alt: 'Mesh detail used for duct area bird netting' },
-    ],
-  },
-  {
-    slug: 'anti-bird-safety-nets',
-    name: 'Anti-Bird Safety Nets',
-    shortName: 'Anti-Bird Nets',
-    category: 'Safety & Pigeon Nets',
-    metaTitle: 'Anti-Bird Safety Nets — Terraces, Warehouses | Chennai',
-    metaDescription:
-      'Large-scale bird netting for terraces, warehouses, solar panels and factories. Crows, mynas and pigeons kept out. Site visit free — call +91 78100 40329.',
-    icon: Feather,
-    heroTagline: 'One net, every bird — not just pigeons.',
-    intro: [
-      "This is the larger-scale version of bird netting — terraces, warehouse roofs, factory shade sheds, solar panel installations and commercial building facades, where the problem isn't only pigeons but crows, mynas and sometimes swallows nesting in structural gaps. The scale and mesh spec are different from a single balcony job, and so is the survey.",
-      "For open terraces and large roof areas we fit a tensioned overhead net, supported on a perimeter cable or pole frame so it doesn't sag under monsoon rain load. For solar panel installations specifically, netting underneath and around the panel frame stops birds nesting in the gap beneath the panels, which is a common cause of wiring damage and reduced output.",
-      'We quote this by area (square feet) rather than per opening, since jobs range from a single terrace to an entire factory shed roof.',
-    ],
-    bestFor: [
-      'Open terraces used for drying, storage or gatherings that attract birds',
-      'Warehouses and factory sheds with bird nesting in roof trusses',
-      'Solar panel installations where birds nest underneath the panel frame',
-      'Commercial buildings and facades with recurring crow or myna nesting',
-    ],
-    materials: [
-      {
-        label: 'Mesh material',
-        value: 'UV-stabilised HDPE, 1.5"–2" spacing depending on target bird size',
-      },
-      {
-        label: 'Support structure',
-        value: 'Perimeter cable or GI pole frame rated for monsoon rain load',
-      },
-      {
-        label: 'Coverage',
-        value: 'Full overhead or perimeter netting, sized to area in square feet',
-      },
-      {
-        label: 'Solar panel variant',
-        value: 'Under-panel netting fitted without obstructing panel cleaning or airflow',
-      },
-      { label: 'Fixing', value: 'SS anchors into parapet, roof structure or existing railing' },
-      { label: 'Warranty', value: '5 years against UV degradation, 1 year on installation' },
-    ],
-    benefits: [
-      {
-        title: "Covers birds a pigeon net spec doesn't",
-        body: 'Crows and mynas are larger and more aggressive nesters than pigeons — mesh spacing and tensioning are adjusted for them specifically.',
-      },
-      {
-        title: 'Rated for monsoon rain load',
-        body: "Overhead terrace and shed netting is supported on a proper cable or pole frame so it doesn't pool water and sag or tear.",
-      },
-      {
-        title: 'Protects solar panel output',
-        body: 'Birds nesting under panels is a common, under-noticed cause of wiring damage and dropped output — under-panel netting closes that gap.',
-      },
-      {
-        title: 'Priced by area for large jobs',
-        body: 'Warehouse and factory quotes are transparent per-square-foot, so scaling up from one shed to the whole facility is a straightforward add-on, not a renegotiation.',
-      },
-    ],
-    process: [
-      {
-        step: 'Site survey',
-        body: 'For large sites we walk the full roof/terrace area and check structural anchor points before quoting — this is a longer survey than a single balcony.',
-      },
-      {
-        step: 'Quote by area',
-        body: "Priced per square foot with support-frame cost shown separately, so you can see what's netting and what's structural.",
-      },
-      {
-        step: 'Installation',
-        body: 'Support frame goes up first, then the net is tensioned across it. Larger sites are scheduled over multiple days to avoid disrupting operations.',
-      },
-      {
-        step: 'Warranty & aftercare',
-        body: 'For factories and warehouses we recommend an annual pre-monsoon inspection, which we can schedule directly with your facility team.',
-      },
-    ],
-    faqs: [
-      {
-        q: 'Does this stop crows as well as pigeons?',
-        a: 'Yes — mesh spacing and the support frame are specified for larger, stronger birds like crows and mynas, not just pigeons.',
-      },
-      {
-        q: 'Will netting affect solar panel cleaning or airflow?',
-        a: "No, under-panel netting is fitted with clearance for routine cleaning and doesn't block airflow around the panels.",
-      },
-      {
-        q: 'How is pricing worked out for a large site?',
-        a: 'Per square foot of net area, with the support frame (cable or pole) costed separately and shown on the quote.',
-      },
-      {
-        q: 'Can this be done without stopping factory operations?',
-        a: 'Yes, we schedule larger jobs in phases or off-hours to avoid disrupting the working floor.',
-      },
-      {
-        q: 'Does the net sag or collect rainwater?',
-        a: "No, it's tensioned over a perimeter cable or pole frame specifically rated to shed monsoon rain load rather than pool it.",
-      },
-      {
-        q: 'Do you provide a maintenance contract for large installations?',
-        a: 'Yes, annual pre-monsoon inspection visits can be arranged directly with your facility or maintenance team.',
-      },
-    ],
-    relatedSlugs: ['pigeon-nets-balcony', 'duct-area-pigeon-nets', 'glass-safety-nets'],
-    gallery: [
-      {
-        src: '/gallery/net-pattern-2.svg',
-        alt: 'Large-format bird netting over a terrace or shed roof',
-      },
-      { src: '/gallery/net-pattern-1.svg', alt: 'Perimeter-supported anti-bird net mesh detail' },
-    ],
-  },
-  {
-    slug: 'children-safety-nets',
-    name: 'Children Safety Nets',
-    shortName: 'Children Safety Nets',
-    category: 'Safety & Pigeon Nets',
-    metaTitle: 'Children Safety Nets for Balcony & Windows | Chennai',
-    metaDescription:
-      'Soft nylon safety nets for balconies and windows, no drilling required. Ideal for rented flats with young children. Free survey — +91 78100 40329.',
-    icon: ShieldPlus,
-    heroTagline: 'No drilling. No grill look. Just no gap for a child to fall through.',
-    intro: [
-      "For families who want balcony and window safety for young children without a grill's look, or in a rented flat where drilling into the wall for a permanent cable system isn't allowed, a safety net is the better fit. It's a soft nylon mesh, not steel — fixed with removable clip hooks so it can go up and come down without marking the wall.",
-      "This differs from our children's safety grill page in one important way: the fixing. Nets clip to a light frame or existing railing rather than anchoring into masonry, which is exactly why landlords approve it where they won't approve a drilled grill. The mesh itself uses the same 2-inch spacing logic as our grill spacing — tight enough that a child cannot push through or wedge a limb.",
-      'We fit these on balconies, ground and low-floor windows, and open staircases inside duplexes where a young child could otherwise fall between banister rails.',
-    ],
-    bestFor: [
-      "Rented flats where drilling into the wall isn't allowed by the landlord",
-      'Families wanting a softer, less visually "caged" look than a steel grill',
-      'Duplex staircases and landings where a toddler could fall through banister gaps',
-      'Temporary safety needs — visiting grandchildren, short-term stays',
-    ],
-    materials: [
-      { label: 'Mesh material', value: 'Soft nylon multifilament, knotted, 2" spacing' },
-      { label: 'Border rope', value: 'Reinforced 6mm edge rope for repeated clip/unclip use' },
-      { label: 'Fixing', value: 'Removable stainless clip hooks — no drilling into masonry' },
-      {
-        label: 'Frame option',
-        value: "Light aluminium frame available where there's no railing to clip to",
-      },
-      {
-        label: 'Feel',
-        value: 'Soft to the touch, no sharp edges — safe for a child to lean or press against',
-      },
-      { label: 'Warranty', value: '3 years on net material, 1 year on installation' },
-    ],
-    benefits: [
-      {
-        title: 'No drilling, landlord-friendly',
-        body: "Clip-fixing means this is one of the few child-safety options that works in a rental without needing the owner's permission for wall work.",
-      },
-      {
-        title: 'Soft, not caged',
-        body: "Nylon mesh has a softer look and feel than steel — some families prefer this specifically because it doesn't look like a security grill.",
-      },
-      {
-        title: 'Removable when you move',
-        body: 'Unclips cleanly if you shift flats, so it comes with you rather than staying fixed to a rented property.',
-      },
-      {
-        title: 'Covers staircases, not just balconies',
-        body: 'Duplex banister gaps are a fall risk people rarely think to net — we cover this as part of the same visit if you have one.',
-      },
-    ],
-    process: [
-      {
-        step: 'Site survey',
-        body: "We check whether there's a railing to clip to or whether a light frame is needed first, and measure every opening a young child has access to.",
-      },
-      {
-        step: 'Quote same day',
-        body: 'Priced per opening, with frame cost (if needed) itemised separately from the net itself.',
-      },
-      {
-        step: 'Installation',
-        body: 'Net is clipped taut across the opening and hand-tested for give — no loose corners a child could pull at.',
-      },
-      {
-        step: 'Warranty & aftercare',
-        body: 'If you move flats, we can come detach and refit the same net at your new address for a reduced call-out charge.',
-      },
-    ],
-    faqs: [
-      {
-        q: 'Will my landlord be okay with this?',
-        a: 'Usually yes — since fixing is by clip hooks rather than drilling into the wall, most landlords approve it without hesitation.',
-      },
-      {
-        q: 'Can I take it down and reinstall it if I move?',
-        a: 'Yes, this is one of the main reasons families choose net over grill — it unclips and can be refitted elsewhere.',
-      },
-      {
-        q: 'Is nylon net as safe as a steel cable grill?',
-        a: "For fall and limb-entrapment prevention, yes — the mesh spacing does the same job. Steel grills add rigidity nets don't have, but for most balcony and window fall risks, net spacing is what matters.",
-      },
-      {
-        q: 'Does this work on a spiral or open staircase?',
-        a: 'Yes, we fit netting along banister gaps on open staircases and landings, which is a commonly missed fall risk.',
-      },
-      {
-        q: 'How often does the net need replacing?',
-        a: 'Nylon degrades slower indoors/on covered balconies; on fully exposed balconies we recommend a check around year 3.',
-      },
-      {
-        q: 'Can this be fitted just for a short visit, like grandchildren staying over?',
-        a: 'Yes, we do short-term installations for visiting children, though most families end up keeping it up.',
-      },
-    ],
-    relatedSlugs: ['children-safety-grills', 'balcony-safety-nets', 'invisible-grills'],
-    gallery: [
-      {
-        src: '/gallery/net-pattern-1.svg',
-        alt: 'Soft nylon child-safety net clipped across a balcony opening',
-      },
-      { src: '/gallery/net-pattern-2.svg', alt: 'Close view of 2 inch mesh child-safety netting' },
-    ],
-  },
-  {
-    slug: 'balcony-safety-nets',
-    name: 'Balcony Safety Nets',
-    shortName: 'Balcony Safety Nets',
-    category: 'Safety & Pigeon Nets',
-    metaTitle: 'Balcony Safety Nets Installation | Chennai, All Areas',
-    metaDescription:
-      'General-purpose balcony nets for pets, elderly family members and everyday fall prevention. No-drill option available. Free survey — +91 78100 40329.',
-    icon: PawPrint,
+      'Fall-prevention safety nets for children, pets and elderly family members. No-drill option available. Free survey — call +91 78100 40329.',
+    icon: ShieldCheck,
     heroTagline: 'Kids climb, pets jump, someone leans too far. One net covers all three.',
     intro: [
-      'Not every balcony net request is about young children specifically. A lot of our customers want general fall prevention — for an elderly parent who leans on the railing, for a dog or cat that likes to jump onto the parapet ledge, or simply because the balcony is used daily for drying clothes and storage and a loose railing makes everyone nervous.',
-      'This is the general-purpose version of our netting work: standard 2-inch mesh, fitted across the full balcony opening, with the same clip-hook, no-drill fixing used in our children\'s net service. It suits any balcony where the goal is "nobody and nothing goes over this railing" rather than a child-specific spec.',
-      "If pets are part of the reason you're asking, mention it during survey — we check the mesh tension specifically against a jumping or climbing pet, which is a different stress pattern than a child leaning on it.",
+      "A safety net is the most versatile fall-prevention product we install — it works for young children, pets that jump onto balcony ledges, elderly family members who lean on railings, and general everyday peace of mind. Standard 2-inch mesh, fitted across the full balcony or window opening, with a choice of clip-hook (no-drill) or permanent SS anchor fixing.",
+      "If you're in a rented flat where drilling into the wall isn't allowed, the clip-hook option means this goes up and comes down without marking the wall — and moves with you when you shift flats. If pets are part of the reason you're asking, mention it during survey — we check the mesh tension specifically against a jumping or climbing pet.",
     ],
     bestFor: [
-      'Households with an elderly parent who uses the balcony railing for support',
+      'Households with young children on balconies or near low-sill windows',
       'Homes with a cat or dog that jumps onto balcony ledges or railings',
-      'Balconies used daily for drying clothes, storage, or as an outdoor sitting spot',
-      'Anyone wanting general fall-prevention without a child-specific or pigeon-specific spec',
+      'Households with an elderly parent who uses the balcony railing for support',
+      "Rented flats where drilling into the wall isn't allowed by the landlord",
     ],
     materials: [
-      { label: 'Mesh material', value: 'Nylon or HDPE, 2" spacing, standard breaking strength' },
-      {
-        label: 'Fixing',
-        value: 'Removable clip hooks (no-drill) or SS eye-bolt anchors (permanent) — your choice',
-      },
-      {
-        label: 'Pet-rated tension',
-        value: 'Extra tensioning at jump-height points on request for cats and dogs',
-      },
-      {
-        label: 'Coverage',
-        value: 'Full balcony opening including any gap beside an AC unit or drying stand',
-      },
+      { label: 'Mesh material', value: 'Nylon or HDPE, 2″ spacing, standard breaking strength' },
+      { label: 'Fixing', value: 'Removable clip hooks (no-drill) or SS eye-bolt anchors (permanent)' },
+      { label: 'Pet-rated tension', value: 'Extra tensioning at jump-height points on request' },
       { label: 'Colour', value: 'White, grey or black to match your railing or wall' },
-      {
-        label: 'Warranty',
-        value: '3–5 years depending on fixing type chosen, 1 year on installation',
-      },
+      { label: 'Warranty', value: '3–5 years depending on fixing type, 1 year on installation' },
     ],
     benefits: [
       {
         title: 'One spec, several worries solved',
-        body: "The same net addresses an elderly relative leaning on the railing, a pet jumping the ledge, and general everyday fall risk — you don't need three different products.",
+        body: "The same net addresses children, pets and elderly fall risk — you don't need three different products.",
       },
       {
         title: 'Choice of drilled or no-drill fixing',
-        body: "Owned flats can go with permanent SS eye-bolt anchors; rented flats can choose the same clip-hook, no-drill fixing used in our children's net service.",
+        body: "Owned flats can go with permanent SS eye-bolt anchors; rented flats can choose clip-hook, no-drill fixing.",
       },
       {
-        title: 'Tensioned for pets specifically, on request',
-        body: 'A cat or dog jumping puts a different, sharper load on a net than a person leaning — we add tension points at typical jump height when told a pet is involved.',
+        title: 'Removable when you move',
+        body: 'Unclips cleanly if you shift flats, so it comes with you rather than staying fixed to a rented property.',
       },
       {
         title: "Doesn't interrupt daily balcony use",
@@ -972,7 +258,7 @@ export const services: Service[] = [
     process: [
       {
         step: 'Site survey',
-        body: "We ask what's driving the request — pets, elderly family, general peace of mind — since it changes tensioning and sometimes fixing choice.",
+        body: "We ask what's driving the request — children, pets, elderly family — since it changes tensioning and fixing choice.",
       },
       {
         step: 'Quote same day',
@@ -980,7 +266,7 @@ export const services: Service[] = [
       },
       {
         step: 'Installation',
-        body: 'Net is fitted and hand-tested at jump height if pets are part of the reason, in addition to standard checks.',
+        body: 'Net is fitted and hand-tested at jump height if pets are involved, in addition to standard checks.',
       },
       {
         step: 'Warranty & aftercare',
@@ -990,7 +276,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: 'Will a cat or dog be able to break through the net?',
-        a: 'Standard mesh handles typical pet weight and jumping; we add extra tension points at jump height when you tell us a pet is involved, which covers larger or more determined animals.',
+        a: 'Standard mesh handles typical pet weight and jumping; we add extra tension points at jump height when you tell us a pet is involved.',
       },
       {
         q: 'Can I choose no-drill fixing even though I own the flat?',
@@ -1001,196 +287,141 @@ export const services: Service[] = [
         a: 'No, we route the net around your existing drying stand or rod so nothing changes about daily use.',
       },
       {
-        q: "Is this the same product as the children's safety net?",
-        a: "Same core mesh and fixing options, but tensioning and survey questions are adjusted for the actual reason — pets, elderly family, or general safety — rather than assuming it's for children.",
-      },
-      {
         q: 'How long does installation take?',
         a: 'A standard balcony: 2–3 hours including tensioning checks.',
       },
-      {
-        q: 'Can this be combined with a pigeon net if I have both problems?',
-        a: "Yes — if birds are also an issue we'll spec a single mesh that handles both fall prevention and pigeon exclusion rather than fitting two separate nets.",
-      },
     ],
-    relatedSlugs: ['children-safety-nets', 'pigeon-nets-balcony', 'invisible-grills'],
+    relatedSlugs: ['pigeon-nets', 'invisible-grills', 'cloth-hangers'],
     gallery: [
-      {
-        src: '/gallery/net-pattern-2.svg',
-        alt: 'General purpose safety net fitted across a balcony railing',
-      },
-      {
-        src: '/gallery/net-pattern-1.svg',
-        alt: 'Balcony net tensioned around a drying stand and railing',
-      },
+      { src: '/safety-nets-2.jpg.jpeg', alt: 'Children safety net on a balcony' },
+      { src: '/safety-nets-3.jpg.jpeg', alt: 'Safety net installation for child protection' },
+      { src: '/safety-nets-4.jpg.jpeg', alt: 'Balcony safety net for pets and elderly' },
+      { src: '/open-area-safety-nets.jpg.jpeg', alt: 'Open area safety net installation' },
     ],
   },
+
+  // ── 4. Cloth Hangers ─────────────────────────────────────────────────────
   {
-    slug: 'glass-safety-nets',
-    name: 'Glass Safety Nets',
-    shortName: 'Glass Safety Nets',
-    category: 'Safety & Pigeon Nets',
-    metaTitle: 'Glass Safety Nets for Skylights & Canopies | Chennai',
+    slug: 'cloth-hangers',
+    name: 'Cloth Hangers',
+    shortName: 'Cloth Hangers',
+    category: 'Cloth Hangers',
+    metaTitle: 'Balcony Cloth Hanger Installation in Chennai | Jemima',
     metaDescription:
-      'Catch-nets fitted beneath glass skylights, canopies and facades to stop shattered glass falling. For homes and commercial buildings. Call +91 78100 40329.',
-    icon: PanelTop,
-    heroTagline: 'If the glass ever cracks, this is what stops it landing on someone.',
+      'Ceiling-mounted and wall-mounted cloth drying hangers for balconies and utility areas. Stainless steel rods, pulley systems. Free survey — +91 78100 40329.',
+    icon: Shirt,
+    heroTagline: 'Dry clothes without losing your balcony.',
     intro: [
-      'Toughened glass is designed to crumble rather than form blades when it fails — but crumbled glass still falls, and from a skylight, canopy or glass roof, that fall is directly onto whoever is underneath. A glass safety net is a fine mesh fitted just beneath the glass so that if a pane ever cracks from thermal stress, hail, or impact, the fragments are caught before they reach the floor.',
-      "This is a different job from our balcony or pigeon netting — the mesh is finer and fitted at a controlled distance below the glass rather than across an open balcony, and it's common on glass canopies over entrances, glass roofs over atriums, and glass partition walls in commercial buildings where a falling-glass incident is a real liability, not just an inconvenience.",
-      'We fit this for both residential glass roofs (common over stairwells and skylights in independent houses) and commercial buildings doing a facade safety pass — schools, offices and retail spaces most often ask for this ahead of a safety audit.',
+      "A ceiling-mounted cloth hanger keeps your drying rods off the floor and out of the way, turning a cramped balcony into a usable space again. We install stainless steel rod systems — fixed or pulley-operated — that mount to the ceiling or wall of your balcony or utility area, rated to hold a full load of wet laundry without sagging.",
+      "This is one of the most practical additions to any Chennai apartment balcony, especially in flats where the balcony doubles as the only drying space. We fit these alongside our grill and net work so everything is done in one visit — no separate contractor needed.",
     ],
     bestFor: [
-      'Homes and buildings with a glass roof, skylight or overhead glass canopy',
-      'Commercial buildings preparing for a facade or safety compliance audit',
-      'Schools and offices with glass partition walls in high-footfall areas',
-      'Any structure where a cracked glass pane would fall onto people below',
+      'Apartments where the balcony is the only available drying space',
+      'Homes wanting to free up floor space on the balcony',
+      'Utility rooms and service areas needing a permanent drying solution',
+      'Anyone combining a cloth hanger installation with grills or nets in one visit',
     ],
     materials: [
-      {
-        label: 'Mesh material',
-        value: 'Fine nylon monofilament, near-transparent, fitted below the glass plane',
-      },
-      {
-        label: 'Mesh spacing',
-        value: 'Tight enough to contain shattered glass fragments, not just large pieces',
-      },
-      {
-        label: 'Fixing',
-        value:
-          'SS anchors into the glass frame or surrounding structure, not into the glass itself',
-      },
-      {
-        label: 'Clearance',
-        value:
-          'Fitted at a set distance below the glass to catch and hold fragments without touching the pane',
-      },
-      {
-        label: 'Visibility',
-        value: 'Near-transparent monofilament keeps the glass feature visually unobstructed',
-      },
-      {
-        label: 'Warranty',
-        value: '5 years against UV/material degradation, 1 year on installation',
-      },
+      { label: 'Rod material', value: 'SS 316 grade, 25mm dia., rust-proof in coastal humidity' },
+      { label: 'Mounting', value: 'Ceiling-mounted brackets or wall-mounted swing-arm, per space' },
+      { label: 'System type', value: 'Fixed rods or pulley-operated lift system (raise/lower by rope)' },
+      { label: 'Load rating', value: 'Rated for full wet laundry load — typically 15–20 kg per rod' },
+      { label: 'Finish', value: 'Brushed natural steel or powder-coated white/black' },
+      { label: 'Warranty', value: '5 years on rods against rust, 1 year on installation' },
     ],
     benefits: [
       {
-        title: 'Catches fragments before they fall',
-        body: 'Fitted below the glass plane, the net holds shattered pieces in place instead of letting them drop onto whoever is underneath.',
+        title: 'Frees up the balcony floor',
+        body: 'Ceiling-mounted rods keep clothes off the floor and out of the way, so the balcony stays usable as a sitting or storage space.',
       },
       {
-        title: "Doesn't touch or stress the glass itself",
-        body: "Anchors go into the surrounding frame or structure, not the glass, so there's no added load or drilling risk to the pane.",
+        title: 'Pulley system for easy reach',
+        body: 'The lift-and-lower pulley option means you hang clothes at waist height and raise them to ceiling level — no stretching or step-stool needed.',
       },
       {
-        title: 'Keeps the glass feature visible',
-        body: 'Fine monofilament mesh is close to transparent — it protects without turning your skylight or canopy into a visibly netted structure.',
+        title: 'SS 316 grade — no rust in Chennai air',
+        body: "Coastal humidity rusts painted mild steel rods within a monsoon. SS 316 grade holds up for years without any maintenance.",
       },
       {
-        title: 'Useful for compliance, not just accidents',
-        body: 'Commercial buildings often need documented fall-protection measures for overhead glass ahead of a facade safety audit — this is fitted to satisfy that, not just as a precaution.',
+        title: 'Installed alongside grills and nets',
+        body: 'We fit cloth hangers in the same visit as your grill or net installation — one team, one visit, no coordination needed.',
       },
     ],
     process: [
       {
         step: 'Site survey',
-        body: 'We check the glass type, frame structure and the safe clearance distance for the net below the pane — this varies by roof pitch and glass size.',
+        body: 'We check the ceiling height, slab type and available space to confirm whether fixed rods or a pulley system suits your balcony better.',
       },
       {
         step: 'Quote same day',
-        body: 'Priced per square foot of coverage, with any scaffolding or access cost for overhead work shown separately.',
+        body: 'Priced per rod, with pulley mechanism cost shown separately so you can choose the system that fits your budget.',
       },
       {
         step: 'Installation',
-        body: 'Anchors are fitted into the frame/structure first, then the net is tensioned below the glass at the surveyed clearance.',
+        body: 'Brackets are anchored into the ceiling slab, rods are fitted and load-tested before we leave. Most balconies: 1–2 hours.',
       },
       {
         step: 'Warranty & aftercare',
-        body: 'We recommend a visual check each year, especially before monsoon, and will do this as part of an annual maintenance visit if requested.',
+        body: 'If a bracket works loose or a pulley rope frays within warranty, we come back and fix it free of charge.',
       },
     ],
     faqs: [
       {
-        q: 'Does the net get fixed to the glass directly?',
-        a: "No — anchors go into the surrounding frame or structure so there's no drilling into or load on the glass pane itself.",
+        q: 'Can this be fitted on a covered balcony with a false ceiling?',
+        a: 'We anchor into the structural slab above the false ceiling — we confirm this is feasible during the survey.',
       },
       {
-        q: 'Will the net be visible from below?',
-        a: "Fine monofilament mesh is close to transparent at normal viewing distance — it doesn't read as an obvious net from underneath.",
+        q: 'How many rods can fit on a standard Chennai apartment balcony?',
+        a: 'Typically 2–4 rods depending on balcony width; we lay this out during survey so you know exactly what fits.',
       },
       {
-        q: 'Is this required for commercial buildings by law?',
-        a: 'Requirements vary by building and local authority; many facilities add this proactively ahead of a safety audit rather than waiting to be told to.',
+        q: 'Is the pulley system difficult to operate?',
+        a: 'No — a single rope raises and lowers all rods together; most people find it easier than a fixed high rod.',
       },
       {
-        q: 'What if my skylight is very large or oddly shaped?',
-        a: "We survey the exact shape and specify anchor points and net panels to match — this isn't a standard pre-cut product.",
+        q: 'Can this be combined with an invisible grill installation?',
+        a: 'Yes, and this is the most common combination — grills on the balcony opening and a cloth hanger on the ceiling, done in one visit.',
       },
       {
-        q: 'Does this work for glass canopies over an entrance, not just skylights?',
-        a: 'Yes, entrance canopies are one of the more common requests, since they sit directly over a walking path.',
-      },
-      {
-        q: 'How is this different from your anti-bird nets?',
-        a: 'Different purpose and spec entirely — this is a fine, near-invisible mesh for catching falling glass, fitted below a glass surface rather than across an open balcony or terrace.',
+        q: 'Will the rods rust in Chennai humidity?',
+        a: 'Not with SS 316 grade — the same steel used in marine fittings. Painted MS rods rust; these do not.',
       },
     ],
-    relatedSlugs: ['anti-bird-safety-nets', 'stainless-steel-grills', 'balcony-safety-nets'],
+    relatedSlugs: ['invisible-grills', 'safety-nets', 'pigeon-nets'],
     gallery: [
-      {
-        src: '/gallery/glass-pattern-1.svg',
-        alt: 'Glass skylight cross-section with a catch net fitted beneath the panes',
-      },
-      {
-        src: '/gallery/glass-pattern-2.svg',
-        alt: 'Fine mesh net overlay beneath a glass panel grid',
-      },
+      { src: '/safety-nets-5.jpg.jpeg', alt: 'Cloth hanger installation on a balcony' },
+      { src: '/child-pet-nets.jpg.jpeg', alt: 'Balcony with cloth hanger and safety net' },
+      { src: '/balconny-2.jpg.jpeg', alt: 'Balcony utility setup with drying rods' },
     ],
   },
+
+  // ── 5. Sports Nets ───────────────────────────────────────────────────────
   {
-    slug: 'cricket-practice-nets',
-    name: 'Cricket Practice Nets',
-    shortName: 'Cricket Practice Nets',
-    category: 'Safety & Pigeon Nets',
-    metaTitle: 'Cricket Practice Nets Installation | Chennai & Pan-India',
+    slug: 'sports-nets',
+    name: 'Sports Nets',
+    shortName: 'Sports Nets',
+    category: 'Sports Nets',
+    metaTitle: 'Sports Nets Installation — Cricket, Football & More | Chennai',
     metaDescription:
-      'Heavy-duty practice nets for societies, schools and sports academies. GI pole frames, ball-stopping mesh. Free site visit — call +91 78100 40329.',
+      'Heavy-duty practice nets for cricket, football and multi-sport use. GI pole frames, ball-stopping mesh. Free site visit — call +91 78100 40329.',
     icon: Target,
     heroTagline: 'Built to take a hard-hit ball, evening after evening, for years.',
     intro: [
-      "A cricket practice net gets hit harder and more often than any safety net we install — this is a structural sports installation, not a safety barrier, and it's priced and specified differently. We fit heavy-duty braided HDPE netting on a GI pole frame, sized to the pitch length and height the client needs, for housing society grounds, school playgrounds and sports academies.",
-      "Mesh here is chosen for ball-stopping strength rather than for being unobtrusive — 1–2 inch spacing in a heavier braided twine that holds up to a cricket ball at practice pace over years of daily use, not just occasional impact. Pole frames are GI pipe, set in concrete footings, sized to the site's wind exposure and net height (typically 10–12 ft).",
-      'This is one of the few services on this site aimed at sports facilities and societies rather than home safety — but the same survey-quote-install-warranty process applies.',
+      "A sports net gets hit harder and more often than any safety net we install — this is a structural sports installation, not a safety barrier, and it's priced and specified differently. We fit heavy-duty braided HDPE netting on a GI pole frame, sized to the pitch length and height the client needs, for housing society grounds, school playgrounds and sports academies.",
+      "Mesh here is chosen for ball-stopping strength — 1–2 inch spacing in a heavier braided twine that holds up to a cricket ball at practice pace over years of daily use. Pole frames are GI pipe, set in concrete footings, sized to the site's wind exposure and net height (typically 10–12 ft). We also fit football goal nets, multi-sport enclosures and terrace ball-stop nets.",
     ],
     bestFor: [
       'Housing societies with open ground wanting a permanent practice net setup',
-      'Schools and colleges with a cricket coaching program',
+      'Schools and colleges with a cricket or football coaching program',
       'Sports academies needing multiple practice lanes',
       'Terraces or open plots used informally for practice that need ball containment',
     ],
     materials: [
-      {
-        label: 'Net material',
-        value: 'Braided HDPE, 1"–2" spacing, heavy-duty ball-stopping weave',
-      },
+      { label: 'Net material', value: 'Braided HDPE, 1″–2″ spacing, heavy-duty ball-stopping weave' },
       { label: 'Pole frame', value: 'GI pipe, set in concrete footings, height 10–12 ft standard' },
-      {
-        label: 'Side/back coverage',
-        value: 'Full enclosure (side, back, overhead optional) or single-side, per site',
-      },
-      {
-        label: 'Border rope',
-        value: 'Reinforced edge rope stitched to withstand repeated ball impact',
-      },
-      {
-        label: 'Lane width',
-        value: 'Standard single-lane or multi-lane layouts, sized to available ground',
-      },
-      {
-        label: 'Warranty',
-        value: '3 years on net material, 5 years on pole frame, 1 year on installation',
-      },
+      { label: 'Side/back coverage', value: 'Full enclosure or single-side, per site requirement' },
+      { label: 'Border rope', value: 'Reinforced edge rope stitched to withstand repeated ball impact' },
+      { label: 'Warranty', value: '3 years on net material, 5 years on pole frame, 1 year on installation' },
     ],
     benefits: [
       {
@@ -1207,21 +438,21 @@ export const services: Service[] = [
       },
       {
         title: 'One point of contact for society-scale jobs',
-        body: 'For societies and schools ordering multiple lanes, we quote and install the full layout as one job, not lane by lane.',
+        body: 'For societies and schools ordering multiple lanes, we quote and install the full layout as one job.',
       },
     ],
     process: [
       {
         step: 'Site survey',
-        body: 'We measure the ground, check for overhead obstructions (wires, trees) and confirm how many lanes fit the available space.',
+        body: 'We measure the ground, check for overhead obstructions and confirm how many lanes fit the available space.',
       },
       {
         step: 'Quote same day',
-        body: 'Priced per lane, covering poles, footings, and netting as one line item per lane so multi-lane orders are easy to compare.',
+        body: 'Priced per lane, covering poles, footings, and netting as one line item per lane.',
       },
       {
         step: 'Installation',
-        body: 'Pole footings are dug and set first and left to cure before netting is fitted and tensioned — larger multi-lane jobs are scheduled over several days.',
+        body: 'Pole footings are dug and set first and left to cure before netting is fitted and tensioned — larger jobs scheduled over several days.',
       },
       {
         step: 'Warranty & aftercare',
@@ -1239,31 +470,25 @@ export const services: Service[] = [
       },
       {
         q: 'What net height do you recommend?',
-        a: '10–12 ft is standard for practice nets and stops the ball reliably for most playing levels; taller options are available for specific requirements.',
-      },
-      {
-        q: 'How many lanes can fit in a housing society ground?',
-        a: "Depends entirely on your ground's dimensions — we bring lane-width options to the survey so you can see what fits.",
-      },
-      {
-        q: 'Does the net need to be taken down before monsoon?',
-        a: 'No, the netting and frame are built to stay up year-round; we just recommend a tension check before the season.',
+        a: '10–12 ft is standard for practice nets and stops the ball reliably for most playing levels.',
       },
       {
         q: 'Do you install for schools and academies, not just housing societies?',
         a: 'Yes — schools, colleges and academies are a regular part of this work, often ordering multiple lanes at once.',
       },
+      {
+        q: 'Does the net need to be taken down before monsoon?',
+        a: 'No, the netting and frame are built to stay up year-round; we just recommend a tension check before the season.',
+      },
     ],
-    relatedSlugs: ['anti-bird-safety-nets', 'balcony-safety-nets', 'stainless-steel-grills'],
+    relatedSlugs: ['safety-nets', 'pigeon-nets', 'invisible-grills'],
     gallery: [
+      { src: '/cricket1.jpg.jpeg', alt: 'Cricket practice net with GI pole frame' },
       {
-        src: '/gallery/cricket-pattern-1.svg',
-        alt: 'Cricket practice net enclosure with pole frame and stumps',
+        src: '/Secure-Netting-Offers-Quality-Nets-for-Cricket-Practice-in-Port-Blair-and-Throughout-Andaman-Nicobar-Island.webp',
+        alt: 'Cricket practice net installation at a sports facility',
       },
-      {
-        src: '/gallery/cricket-pattern-2.svg',
-        alt: 'Close view of heavy-duty cricket practice net mesh',
-      },
+      { src: '/open-area-safety-nets.jpg.jpeg', alt: 'Open area sports net installation' },
     ],
   },
 ]
@@ -1273,4 +498,6 @@ export function getServiceBySlug(slug: string): Service | undefined {
 }
 
 export const grillServices = services.filter((s) => s.category === 'Invisible Grills')
-export const netServices = services.filter((s) => s.category === 'Safety & Pigeon Nets')
+export const netServices = services.filter(
+  (s) => s.category === 'Safety Nets' || s.category === 'Pigeon Nets',
+)

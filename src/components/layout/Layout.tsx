@@ -29,7 +29,7 @@ export function Layout() {
         Skip to content
       </a>
       <Header />
-      <main id="main-content" className="flex-1 pb-16 lg:pb-0">
+      <main id="main-content" className="flex-1 pb-20 lg:pb-0">
         <Outlet />
       </main>
       <Footer />

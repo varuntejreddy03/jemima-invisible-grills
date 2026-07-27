@@ -6,13 +6,25 @@ by the build, not confirmed by the business owner. Search the codebase for
 
 ## 1. Photos (the most important item)
 
-Every image on the site right now is a generated placeholder — a simple
-navy/steel line-art diagram, not a photograph — used so the gallery, lightbox
-and service pages work end-to-end before real photos exist.
+Most services now show a **free stock photo** (Pexels, no attribution
+required) instead of a plain SVG diagram, plus the hero image and the About
+page — this was done so the client-facing preview reads as a fuller site
+while real photography is arranged. These are still stand-ins, not photos of
+this business's actual work:
 
-- `public/gallery/*.svg` (9 files) — referenced from `src/data/services.ts`
-  (`gallery: [...]`) and from the homepage gallery strip.
-- `src/components/BalconyIllustration.tsx` — the hero illustration on the homepage.
+- `public/gallery/hero-balcony-exterior.jpg` — homepage hero image
+  (`src/components/Hero.tsx`).
+- `public/gallery/worker-install.jpg` — About page banner (`src/pages/About.tsx`).
+- `public/gallery/cable-tension-detail.jpg`, `pigeon-balcony-1/2.jpg`,
+  `balcony-net-installed.jpg`, `glass-atrium.jpg`, `cricket-net.jpg` —
+  first gallery image for Invisible Grills, Stainless Steel Grills, Pigeon
+  Nets, Anti-Bird/Balcony/Children Safety Nets, Glass Safety Nets and Cricket
+  Practice Nets respectively, referenced from `gallery: [...]` in
+  `src/data/services.ts`.
+- `public/gallery/*.svg` (still present as the second gallery image on those
+  services, and the only image on Monkey Safety Grills and Duct Area Pigeon
+  Nets, where no honest stock photo exists) — simple navy/steel line-art
+  diagrams, not photographs.
 
 **To replace:** shoot real before/after installation photos, name them per
 service (e.g. `invisible-grills-adyar-1.jpg`), drop them in `public/gallery/`,
@@ -20,6 +32,8 @@ and update the `gallery` array for the matching service in
 `src/data/services.ts` to point at the new files. Real photos with
 `loading="lazy"` and explicit `width`/`height` are already wired up in
 `ServiceDetail.tsx` and `Gallery.tsx` — only the file paths need to change.
+This matters more than anything else on this list: stock photos build some
+trust, but real photos of this business's own completed jobs build much more.
 
 ## 2. Business figures (About page)
 
@@ -74,3 +88,14 @@ footer, Contact page and `LocalBusiness` structured data
 (`src/lib/seo-schema.ts`). Add a full street address in
 `src/lib/constants.ts` (`BUSINESS.addressLine`) if you want one displayed and
 included in search-engine structured data.
+
+## 9. Pricing table (new homepage section)
+
+The homepage now shows a "Typical pricing, shown up front" table
+(`src/data/pricing.ts`, rendered in `src/pages/Home.tsx`) with a price range
+per material — nylon net, HDPE pigeon net, reinforced HDPE net, invisible
+grill cable, fabricated SS grill. These rates are **indicative estimates
+based on typical Chennai market pricing, not this business's confirmed
+costing**. Confirm real rates (or decide to withhold pricing from the
+homepage entirely) before this goes live — publishing wrong prices is worse
+than publishing none, since customers will hold you to what's printed.

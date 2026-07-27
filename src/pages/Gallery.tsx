@@ -11,6 +11,40 @@ const galleryItems: GalleryItem[] = services.flatMap((s) =>
   s.gallery.map((g) => ({ ...g, slug: s.slug, shortName: s.shortName })),
 )
 
+const extraPhotos = [
+  { src: '/safety-nets-6.jpg.jpeg', alt: 'Safety net installation' },
+  { src: '/safety-nets-7.jpg.jpeg', alt: 'Safety net on a residential building' },
+  { src: '/safety-nets-8.jpg.jpeg', alt: 'Net installation close-up' },
+  { src: '/safety-nets-9.jpg.jpeg', alt: 'Safety net fitted on a balcony' },
+  { src: '/safety-nets-10.jpg.jpeg', alt: 'Safety net installation work in progress' },
+  { src: '/safety-nets-11.jpg.jpeg', alt: 'Completed safety net installation' },
+  { src: '/safety-nets-12.jpg.jpeg', alt: 'Safety net on apartment building' },
+  { src: '/safety-nets-13.jpg.jpeg', alt: 'Safety net installation detail' },
+  { src: '/safety-nets-14.jpg.jpeg', alt: 'Safety net fitted across balcony' },
+  { src: '/safety-nets-16.jpg.jpeg', alt: 'Safety net installation view' },
+  { src: '/safety-nets-17.jpg.jpeg', alt: 'Net installation on high-rise' },
+  { src: '/safety-nets-18.jpg.jpeg', alt: 'Safety net on residential complex' },
+  { src: '/safety-nets-19.jpg.jpeg', alt: 'Safety net installation completed' },
+  { src: '/worker-install.jpg', alt: 'Technician installing safety net on site' },
+  { src: '/w1.jpg.jpeg', alt: 'Installation work on site' },
+  { src: '/w2.jpg.jpeg', alt: 'Team installing safety net' },
+  { src: '/w3.jpg.jpeg', alt: 'Worker fitting net on balcony' },
+  { src: '/w4.jpg.jpeg', alt: 'Installation team at work' },
+  { src: '/slider-1A.jpg.jpeg', alt: 'Safety net installation showcase' },
+  { src: '/ser3.jpeg', alt: 'Service installation photo' },
+  { src: '/service-5.jpg.jpeg', alt: 'Safety net service installation' },
+  { src: '/terrace-top.jpg.jpeg', alt: 'Terrace safety net installation' },
+  { src: '/industrial1.jpg.jpeg', alt: 'Industrial safety net installation' },
+  { src: '/images.jpeg', alt: 'Safety net installation' },
+  { src: '/images-8.jpeg', alt: 'Net installation on building' },
+  { src: '/cl-5.jpg.jpeg', alt: 'Safety net close-up' },
+  { src: '/blog2.jpg.jpeg', alt: 'Safety net installation blog photo' },
+  { src: '/blog4.jpg.jpeg', alt: 'Installation work photo' },
+  { src: '/4-5.jpg.jpeg', alt: 'Safety net installation' },
+  { src: '/17.jpg.jpeg', alt: 'Net installation on apartment' },
+  { src: '/a8a4ad7e-6834-4fbd-bf01-3c97b844d6ba.jpeg', alt: 'Safety net installation' },
+]
+
 export function Gallery() {
   const [activeSlug, setActiveSlug] = useState<string>('all')
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
@@ -35,38 +69,21 @@ export function Gallery() {
         lede="Filter by service to see the kind of install you're considering. Click any image to view it larger."
       />
 
-      <section aria-labelledby="gallery-heading" className="container-page py-14 sm:py-16">
-        <h2 id="gallery-heading" className="sr-only">
-          Installation gallery
-        </h2>
+      <section aria-labelledby="gallery-heading" className="container-page py-16 sm:py-20">
+        <h2 id="gallery-heading" className="sr-only">Installation gallery</h2>
 
-        <div
-          className="mb-8 flex flex-wrap gap-2.5"
-          role="group"
-          aria-label="Filter gallery by service"
-        >
-          <button
-            type="button"
-            onClick={() => setActiveSlug('all')}
-            aria-pressed={activeSlug === 'all'}
-            className={`rounded-brand border px-4 py-2 font-sans text-sm font-semibold transition-colors ${
-              activeSlug === 'all'
-                ? 'border-navy bg-navy text-white'
-                : 'border-steel/30 bg-white text-navy-deep hover:border-navy/50'
-            }`}
-          >
-            All
-          </button>
-          {services.map((s) => (
+        {/* Filter pills */}
+        <div className="mb-10 flex flex-wrap gap-2" role="group" aria-label="Filter gallery by service">
+          {[{ slug: 'all', shortName: 'All' }, ...services].map((s) => (
             <button
               key={s.slug}
               type="button"
               onClick={() => setActiveSlug(s.slug)}
               aria-pressed={activeSlug === s.slug}
-              className={`rounded-brand border px-4 py-2 font-sans text-sm font-semibold transition-colors ${
+              className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                 activeSlug === s.slug
-                  ? 'border-navy bg-navy text-white'
-                  : 'border-steel/30 bg-white text-navy-deep hover:border-navy/50'
+                  ? 'border-orange bg-orange text-white shadow-md shadow-orange/25'
+                  : 'border-steel/25 bg-white text-navy-deep/70 hover:border-orange/40 hover:text-orange'
               }`}
             >
               {s.shortName}
@@ -74,29 +91,34 @@ export function Gallery() {
           ))}
         </div>
 
-        <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-          {filteredItems.map((item, i) => (
-            <button
-              key={`${item.slug}-${item.src}-${i}`}
-              type="button"
-              onClick={() => setLightboxIndex(i)}
-              className="mb-4 block w-full overflow-hidden rounded-brand border border-steel/25 text-left break-inside-avoid"
-              aria-label={`View larger image: ${item.alt}`}
-            >
-              <img
-                src={item.src}
-                alt={item.alt}
-                width={800}
-                height={600}
-                loading="lazy"
-                className="w-full object-cover transition-transform hover:scale-[1.02]"
-              />
-            </button>
-          ))}
-        </div>
-
-        {filteredItems.length === 0 && (
-          <p className="text-navy-deep/70">No images for this service yet — check back soon.</p>
+        {/* Masonry grid */}
+        {filteredItems.length > 0 ? (
+          <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+            {filteredItems.map((item, i) => (
+              <button
+                key={`${item.slug}-${item.src}-${i}`}
+                type="button"
+                onClick={() => setLightboxIndex(i)}
+                className="group relative mb-4 block w-full overflow-hidden rounded-2xl break-inside-avoid"
+                aria-label={`View larger: ${item.alt}`}
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="absolute bottom-0 left-0 right-0 translate-y-1 p-4 text-left text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  {item.shortName}
+                </span>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <p className="text-navy-deep/60">No images for this service yet — check back soon.</p>
         )}
       </section>
 
@@ -107,6 +129,37 @@ export function Gallery() {
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}
         />
+      )}
+
+      {/* Extra photos — only when showing all */}
+      {activeSlug === 'all' && (
+        <section aria-labelledby="more-photos-heading" className="border-t border-steel/15 bg-mist py-16 sm:py-20">
+          <div className="container-page">
+            <div className="mb-10">
+              <p className="mb-3 text-xs font-bold tracking-[0.14em] text-orange uppercase">More from our installations</p>
+              <h2 id="more-photos-heading" className="font-display text-3xl font-extrabold tracking-tight text-navy-deep uppercase">
+                On-site across Chennai
+              </h2>
+            </div>
+            <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+              {extraPhotos.map((photo, i) => (
+                <div
+                  key={i}
+                  className="mb-4 overflow-hidden rounded-2xl break-inside-avoid"
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={800}
+                    height={600}
+                    loading="lazy"
+                    className="w-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       <CtaBand />

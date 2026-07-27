@@ -30,10 +30,7 @@ export function CtaBand({
           <p className="mt-2 max-w-xl text-white/70">{subtitle}</p>
         </div>
         <div className="flex flex-wrap gap-4">
-          <a
-            href={phoneHref}
-            className="inline-flex items-center gap-2 rounded-brand bg-white px-6 py-3.5 font-sans font-semibold text-navy-deep transition-colors hover:bg-mist"
-          >
+          <a href={phoneHref} className="btn-outline border-white text-white hover:bg-white hover:text-navy-deep px-6 py-3.5">
             <Phone className="size-5" aria-hidden="true" />
             Call now
           </a>
@@ -41,7 +38,7 @@ export function CtaBand({
             href={whatsappHref}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-brand bg-orange px-6 py-3.5 font-sans font-semibold text-white transition-colors hover:bg-orange/90"
+            className="btn-primary px-6 py-3.5"
           >
             <MessageCircle className="size-5" aria-hidden="true" />
             WhatsApp quote

@@ -13,7 +13,6 @@ type RevealProps = {
   as?: keyof typeof tagComponents
 }
 
-/** Quiet fade-and-rise on scroll, honouring prefers-reduced-motion. */
 export function Reveal({ children, delay = 0, className = '', as = 'div' }: RevealProps) {
   const shouldReduceMotion = useReducedMotion()
   const Component = tagComponents[as]
@@ -21,10 +20,10 @@ export function Reveal({ children, delay = 0, className = '', as = 'div' }: Reve
   return (
     <Component
       className={className}
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-10% 0px' }}
-      transition={{ duration: 0.35, delay, ease: 'easeOut' }}
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 32, scale: 0.97 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: '-8% 0px' }}
+      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </Component>
