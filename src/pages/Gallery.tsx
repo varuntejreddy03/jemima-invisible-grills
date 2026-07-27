@@ -25,7 +25,7 @@ const extraPhotos = [
   { src: '/safety-nets-17.jpg.jpeg', alt: 'Net installation on high-rise' },
   { src: '/safety-nets-18.jpg.jpeg', alt: 'Safety net on residential complex' },
   { src: '/safety-nets-19.jpg.jpeg', alt: 'Safety net installation completed' },
-  { src: '/worker-install.jpg', alt: 'Technician installing safety net on site' },
+  { src: '/gallery/worker-install.jpg', alt: 'Technician installing safety net on site' },
   { src: '/w1.jpg.jpeg', alt: 'Installation work on site' },
   { src: '/w2.jpg.jpeg', alt: 'Team installing safety net' },
   { src: '/w3.jpg.jpeg', alt: 'Worker fitting net on balcony' },
@@ -43,6 +43,18 @@ const extraPhotos = [
   { src: '/4-5.jpg.jpeg', alt: 'Safety net installation' },
   { src: '/17.jpg.jpeg', alt: 'Net installation on apartment' },
   { src: '/a8a4ad7e-6834-4fbd-bf01-3c97b844d6ba.jpeg', alt: 'Safety net installation' },
+  // New real photos
+  { src: '/invisible-grill-balcony-night-view.webp', alt: 'Invisible grill balcony night view' },
+  { src: '/invisible-grill-apartment-balcony.webp', alt: 'Invisible grill apartment balcony' },
+  { src: '/premium-invisible-grill-balcony.webp', alt: 'Premium invisible grill balcony' },
+  { src: '/high-rise-invisible-grill-balcony.webp', alt: 'High-rise invisible grill balcony' },
+  { src: '/glass-balcony-invisible-grill.webp', alt: 'Glass balcony invisible grill' },
+  { src: '/balcony-pigeon-safety-net.webp', alt: 'Balcony pigeon safety net' },
+  { src: '/balcony-child-safety-net.webp', alt: 'Balcony child safety net' },
+  { src: '/duct-net-installation-1.webp', alt: 'Duct net installation' },
+  { src: '/duct-net-installation-2.webp', alt: 'Duct net installation 2' },
+  { src: '/duct-net-installation-3.webp', alt: 'Duct net installation 3' },
+  { src: '/sports-safety-net-installation.webp', alt: 'Sports safety net installation' },
 ]
 
 export function Gallery() {

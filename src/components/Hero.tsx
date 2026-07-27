@@ -1,7 +1,22 @@
+import { useState, useEffect } from 'react'
 import { Phone, MessageCircle, ShieldCheck, Clock, Truck, Layers, ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { phoneHref, whatsappHref, BUSINESS } from '@/lib/constants'
+import { services } from '@/data/services'
+
+const heroImages = [
+  '/invisible-grill-balcony-night-view.webp',
+  '/invisible-grill-apartment-balcony.webp',
+  '/premium-invisible-grill-balcony.webp',
+  '/high-rise-invisible-grill-balcony.webp',
+  '/glass-balcony-invisible-grill.webp',
+  '/balcony-pigeon-safety-net.webp',
+  '/balcony-child-safety-net.webp',
+  '/duct-net-installation-1.webp',
+  '/sports-safety-net-installation.webp',
+  '/staircase-invisible-grill-installation.webp',
+]
 
 const trustPoints = [
   { icon: Clock, label: '24×7 service' },
@@ -22,20 +37,31 @@ const fadeUp = {
 
 export function Hero() {
   const reduce = useReducedMotion()
+  const [bgIdx, setBgIdx] = useState(0)
+
+  useEffect(() => {
+    const t = setInterval(() => setBgIdx((i) => (i + 1) % heroImages.length), 4500)
+    return () => clearInterval(t)
+  }, [])
 
   return (
     <section aria-labelledby="hero-heading" className="relative isolate flex min-h-[85vh] flex-col sm:min-h-[92vh]">
-      {/* Background */}
+      {/* Background slideshow */}
       <div className="absolute inset-0 -z-10">
-        <img
-          src="/hero.webp"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          width={1600}
-          height={1067}
-          className="size-full object-cover object-center"
-        />
+        {heroImages.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            aria-hidden="true"
+            fetchPriority={i === 0 ? 'high' : 'low'}
+            width={1600}
+            height={1067}
+            className={`absolute inset-0 size-full object-cover object-center transition-opacity duration-1000 ${
+              i === bgIdx ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/80 via-navy-deep/60 to-navy-deep/85 sm:bg-gradient-to-r sm:from-navy-deep/92 sm:via-navy-deep/75 sm:to-navy-deep/30" />
         <div className="absolute inset-0 cable-backdrop opacity-[0.06]" />
       </div>
@@ -109,6 +135,21 @@ export function Hero() {
             </Link>
           </motion.div>
         </motion.div>
+      </div>
+
+      {/* Slide dots */}
+      <div className="container-page pb-4 flex gap-1.5">
+        {heroImages.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setBgIdx(i)}
+            aria-label={`Background image ${i + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              i === bgIdx ? 'w-5 h-1.5 bg-orange' : 'w-1.5 h-1.5 bg-white/30 hover:bg-white/60'
+            }`}
+          />
+        ))}
       </div>
 
       {/* Trust strip */}

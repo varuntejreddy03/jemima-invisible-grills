@@ -156,6 +156,33 @@ export function ServiceDetail() {
       <div className="container-page grid gap-12 py-14 sm:py-16 lg:grid-cols-[1fr_340px] lg:gap-10">
         <div className="min-w-0 space-y-16">
 
+          {/* Gallery — first so it's immediately visible */}
+          {service.gallery.length > 0 && (
+            <section aria-labelledby="gallery-heading">
+              <SectionTitle id="gallery-heading" eyebrow="Our work" title="Installation gallery" subtitle="Real installations by our team." className="mb-6" />
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {service.gallery.map((img, i) => (
+                  <button
+                    key={img.src}
+                    type="button"
+                    onClick={() => setLightboxIndex(i)}
+                    className="group overflow-hidden rounded-2xl border border-steel/20 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    aria-label={`View larger: ${img.alt}`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      width={800}
+                      height={600}
+                      loading="eager"
+                      className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                    />
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Intro */}
           <section aria-labelledby="intro-heading">
             <h2 id="intro-heading" className="sr-only">About {service.name}</h2>
@@ -229,33 +256,6 @@ export function ServiceDetail() {
             <SectionTitle id="process-heading" eyebrow="Our process" title="How installation works" subtitle="Simple, fast, done in one visit for most homes." className="mb-8" />
             <ProcessTimeline steps={service.process} />
           </section>
-
-          {/* Gallery */}
-          {service.gallery.length > 0 && (
-            <section aria-labelledby="gallery-heading">
-              <SectionTitle id="gallery-heading" eyebrow="Our work" title="Installation gallery" subtitle="Real installations by our team." className="mb-6" />
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {service.gallery.map((img, i) => (
-                  <button
-                    key={img.src}
-                    type="button"
-                    onClick={() => setLightboxIndex(i)}
-                    className="group overflow-hidden rounded-brand border border-steel/20 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                    aria-label={`View larger: ${img.alt}`}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      width={800}
-                      height={600}
-                      loading="lazy"
-                      className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                    />
-                  </button>
-                ))}
-              </div>
-            </section>
-          )}
 
           {/* FAQ */}
           <section aria-labelledby="faq-heading">

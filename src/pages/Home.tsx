@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { Clock, Layers, ShieldCheck, Truck, Award, Star, Check, X, ArrowRight } from 'lucide-react'
 import { motion, useReducedMotion } from 'motion/react'
 import { Seo } from '@/components/Seo'
@@ -178,6 +179,72 @@ const homeFaqs = [
   },
 ]
 
+function ServiceSlideCard({ service: s }: { service: (typeof services)[0] }) {
+  const [idx, setIdx] = useState(0)
+  const imgs = s.gallery
+
+  useEffect(() => {
+    if (imgs.length < 2) return
+    const t = setInterval(() => setIdx((i) => (i + 1) % imgs.length), 3000)
+    return () => clearInterval(t)
+  }, [imgs.length])
+
+  return (
+    <Link
+      to={`/services/${s.slug}`}
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-steel/20 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-navy/10"
+    >
+      {/* sliding photos */}
+      <div className="relative aspect-[16/9] overflow-hidden bg-mist">
+        {imgs.map((img, i) => (
+          <img
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            width={800}
+            height={450}
+            loading="lazy"
+            className={`absolute inset-0 size-full object-cover transition-opacity duration-700 ${
+              i === idx ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/60 via-navy-deep/10 to-transparent" />
+        {/* category badge */}
+        <span className="absolute left-3 top-3 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-sm">
+          {s.category}
+        </span>
+        {/* dot indicators */}
+        {imgs.length > 1 && (
+          <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
+            {imgs.map((_, i) => (
+              <span
+                key={i}
+                className={`block rounded-full transition-all duration-300 ${
+                  i === idx ? 'w-4 h-1.5 bg-orange' : 'w-1.5 h-1.5 bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+      {/* text */}
+      <div className="flex flex-1 items-start gap-4 p-5">
+        <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-navy/8 transition-colors duration-300 group-hover:bg-orange">
+          <s.icon className="size-5 text-navy transition-colors duration-300 group-hover:text-white" aria-hidden="true" />
+        </div>
+        <div className="min-w-0">
+          <h3 className="font-display text-base font-bold text-navy-deep transition-colors group-hover:text-orange">{s.name}</h3>
+          <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-navy-deep/60">{s.heroTagline}</p>
+          <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-orange">
+            Learn more <ArrowRight className="size-3" />
+          </span>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
 export function Home() {
   const reduce = useReducedMotion()
 
@@ -226,21 +293,7 @@ export function Home() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 0.07}>
-              <Link
-                to={`/services/${s.slug}`}
-                className="group flex items-start gap-5 rounded-2xl border border-steel/20 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-orange/30 hover:shadow-lg hover:shadow-navy/8"
-              >
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-navy/8 transition-colors duration-300 group-hover:bg-orange group-hover:text-white">
-                  <s.icon className="size-5 text-navy transition-colors duration-300 group-hover:text-white" aria-hidden="true" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-display text-base font-bold text-navy-deep group-hover:text-orange transition-colors">{s.name}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-navy-deep/60 line-clamp-2">{s.intro[0]}</p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-orange">
-                    Learn more <ArrowRight className="size-3" />
-                  </span>
-                </div>
-              </Link>
+              <ServiceSlideCard service={s} />
             </Reveal>
           ))}
         </div>
