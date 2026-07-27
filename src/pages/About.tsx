@@ -81,7 +81,7 @@ export function About() {
           <Reveal delay={0.08}>
             <SectionTitle eyebrow="How we work" title="Our service philosophy" className="mb-8" />
             <ul className="space-y-5">
-              {principles.map((p, i) => (
+              {principles.map((p) => (
                 <li key={p.title} className="flex gap-4">
                   <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-orange/10 mt-0.5">
                     <CheckCircle2 className="size-4 text-orange" aria-hidden="true" />

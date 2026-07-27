@@ -15,7 +15,7 @@ import { Lightbox } from '@/components/Lightbox'
 import { ServiceCard } from '@/components/ServiceCard'
 import { Reveal } from '@/components/Reveal'
 import { getServiceBySlug } from '@/data/services'
-import { phoneHref, buildWhatsappUrl, BUSINESS } from '@/lib/constants'
+import { phoneHref, buildWhatsappUrl } from '@/lib/constants'
 import { buildFaqSchema, buildBreadcrumbSchema } from '@/lib/seo-schema'
 
 const trustPoints = [
