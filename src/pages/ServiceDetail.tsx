@@ -60,77 +60,122 @@ export function ServiceDetail() {
       />
 
       {/* ── Hero ── */}
-      <section
-        className="relative flex min-h-[420px] items-center overflow-hidden bg-navy-deep sm:min-h-[480px]"
-        aria-labelledby="service-hero-heading"
-      >
-        {/* background image */}
-        {service.gallery[0] && (
-          <img
-            src={service.gallery[0].src}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 size-full object-cover opacity-25"
-          />
-        )}
-        {/* gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/70 to-transparent" />
+      <section className="relative overflow-hidden bg-navy-deep" aria-labelledby="service-hero-heading">
+        {/* subtle dot-grid texture */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
+        {/* orange glow top-right */}
+        <div className="pointer-events-none absolute -right-32 -top-32 size-[500px] rounded-full bg-orange/10 blur-3xl" />
 
-        <div className="container-page relative z-10 py-16">
-          {/* breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/60">
-              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <ChevronRight className="size-3.5" aria-hidden="true" />
-              <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
-              <ChevronRight className="size-3.5" aria-hidden="true" />
-              <li className="font-semibold text-orange">{service.name}</li>
-            </ol>
-          </nav>
+        <div className="container-page relative z-10 grid items-center gap-10 py-14 lg:grid-cols-[1fr_420px] lg:gap-16 lg:py-20">
 
-          <motion.p
-            className="mb-3 font-sans text-sm font-semibold tracking-[0.2em] text-orange uppercase"
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Chennai · Pan-India installation
-          </motion.p>
+          {/* ── Left: text ── */}
+          <div>
+            <nav aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/50">
+                <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
+                <ChevronRight className="size-3.5" aria-hidden="true" />
+                <li><Link to="/services" className="hover:text-white transition-colors">Services</Link></li>
+                <ChevronRight className="size-3.5" aria-hidden="true" />
+                <li className="font-semibold text-orange">{service.name}</li>
+              </ol>
+            </nav>
 
-          <motion.h1
-            id="service-hero-heading"
-            className="font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight tracking-tight text-white uppercase"
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.08 }}
-          >
-            {service.name}
-          </motion.h1>
+            <motion.div
+              className="mb-4 inline-flex items-center gap-2 rounded-full border border-orange/30 bg-orange/10 px-3.5 py-1.5"
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45 }}
+            >
+              <Icon className="size-3.5 text-orange" aria-hidden="true" />
+              <span className="text-xs font-bold tracking-[0.18em] text-orange uppercase">Chennai · Pan-India</span>
+            </motion.div>
 
-          <motion.p
-            className="mt-4 max-w-xl text-lg text-white/80"
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.16 }}
-          >
-            {service.heroTagline}
-          </motion.p>
+            <motion.h1
+              id="service-hero-heading"
+              className="font-display text-[clamp(2.2rem,5.5vw,4rem)] font-extrabold leading-[1.05] tracking-tight text-white uppercase"
+              initial={reduce ? false : { opacity: 0, y: 22 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.08 }}
+            >
+              {service.name}
+            </motion.h1>
 
-          <motion.div
-            className="mt-8 flex flex-wrap gap-4"
-            initial={reduce ? false : { opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.24 }}
-          >
-            <a href={phoneHref} className="btn-navy px-6 py-3.5 text-base">
-              <Phone className="size-5" aria-hidden="true" />
-              Call now
-            </a>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="btn-primary px-6 py-3.5 text-base">
-              <MessageCircle className="size-5" aria-hidden="true" />
-              WhatsApp quote
-            </a>
-          </motion.div>
+            <motion.p
+              className="mt-5 max-w-lg text-lg leading-relaxed text-white/70"
+              initial={reduce ? false : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.16 }}
+            >
+              {service.heroTagline}
+            </motion.p>
+
+            <motion.div
+              className="mt-8 flex flex-wrap gap-3"
+              initial={reduce ? false : { opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.24 }}
+            >
+              <a href={phoneHref} className="btn-navy px-6 py-3.5 text-base">
+                <Phone className="size-5" aria-hidden="true" />
+                Call now
+              </a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="btn-primary px-6 py-3.5 text-base">
+                <MessageCircle className="size-5" aria-hidden="true" />
+                WhatsApp quote
+              </a>
+            </motion.div>
+
+            {/* mini trust pills */}
+            <motion.div
+              className="mt-8 flex flex-wrap gap-2"
+              initial={reduce ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.38 }}
+            >
+              {['Free survey', 'Same-day quote', '5-yr warranty'].map((t) => (
+                <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-white/60">{t}</span>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* ── Right: two images with offset card style ── */}
+          {service.gallery.length >= 2 && (
+            <motion.div
+              className="relative mx-auto w-full max-w-sm lg:max-w-none"
+              initial={reduce ? false : { opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.65, delay: 0.18 }}
+            >
+              {/* image 1 — top, slightly left */}
+              <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl ring-2 ring-white/10">
+                <img
+                  src={service.gallery[0].src}
+                  alt={service.gallery[0].alt}
+                  width={480}
+                  height={320}
+                  loading="eager"
+                  className="h-52 w-full object-cover sm:h-60"
+                />
+
+              </div>
+              {/* image 2 — bottom */}
+              <div className="relative z-20 mt-4 overflow-hidden rounded-2xl shadow-2xl ring-2 ring-white/10">
+                <img
+                  src={service.gallery[1].src}
+                  alt={service.gallery[1].alt}
+                  width={480}
+                  height={320}
+                  loading="eager"
+                  className="h-52 w-full object-cover sm:h-60"
+                />
+                {/* verified badge */}
+                <div className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full bg-orange px-3 py-1.5 shadow-lg">
+                  <ShieldCheck className="size-3.5 text-white" aria-hidden="true" />
+                  <span className="text-[11px] font-bold text-white">Verified install</span>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </section>
 
@@ -155,33 +200,6 @@ export function ServiceDetail() {
       {/* ── Main content + sidebar ── */}
       <div className="container-page grid gap-12 py-14 sm:py-16 lg:grid-cols-[1fr_340px] lg:gap-10">
         <div className="min-w-0 space-y-16">
-
-          {/* Gallery — first so it's immediately visible */}
-          {service.gallery.length > 0 && (
-            <section aria-labelledby="gallery-heading">
-              <SectionTitle id="gallery-heading" eyebrow="Our work" title="Installation gallery" subtitle="Real installations by our team." className="mb-6" />
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                {service.gallery.map((img, i) => (
-                  <button
-                    key={img.src}
-                    type="button"
-                    onClick={() => setLightboxIndex(i)}
-                    className="group overflow-hidden rounded-2xl border border-steel/20 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                    aria-label={`View larger: ${img.alt}`}
-                  >
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      width={800}
-                      height={600}
-                      loading="eager"
-                      className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
-                    />
-                  </button>
-                ))}
-              </div>
-            </section>
-          )}
 
           {/* Intro */}
           <section aria-labelledby="intro-heading">
@@ -262,6 +280,33 @@ export function ServiceDetail() {
             <SectionTitle id="faq-heading" eyebrow="FAQ" title="Frequently asked questions" className="mb-6" />
             <FaqAccordion faqs={service.faqs} idPrefix={`${service.slug}-faq`} />
           </section>
+
+          {/* Gallery — at bottom */}
+          {service.gallery.length > 0 && (
+            <section aria-labelledby="gallery-heading">
+              <SectionTitle id="gallery-heading" eyebrow="Our work" title="Installation gallery" subtitle="Real installations by our team." className="mb-6" />
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {service.gallery.map((img, i) => (
+                  <button
+                    key={img.src}
+                    type="button"
+                    onClick={() => setLightboxIndex(i)}
+                    className="group overflow-hidden rounded-2xl border border-steel/20 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    aria-label={`View larger: ${img.alt}`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      width={800}
+                      height={600}
+                      loading="lazy"
+                      className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                    />
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Related services */}
           {relatedServices.length > 0 && (
