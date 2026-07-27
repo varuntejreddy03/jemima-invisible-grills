@@ -1,29 +1,28 @@
 import { useState, useEffect } from 'react'
 import { Phone, MessageCircle, ShieldCheck, Clock, Truck, Layers, ArrowRight } from 'lucide-react'
-import { motion, useReducedMotion } from 'motion/react'
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { phoneHref, whatsappHref, BUSINESS } from '@/lib/constants'
 
-const heroImages = [
-  '/invisible-grill-balcony-evening.webp',
-  '/invisible-grill-apartment-balcony-night.webp',
-  '/invisible-grill-balcony-night-view.webp',
-  '/premium-invisible-grill-balcony.webp',
-  '/high-rise-invisible-grill-balcony.webp',
-  '/glass-balcony-invisible-grill.webp',
-  '/balcony-pigeon-net-installation.webp',
-  '/balcony-child-safety-net.webp',
-  '/duct-area-safety-net-installation.webp',
-  '/staircase-safety-net-installation.webp',
-  '/sports-safety-net-installation.webp',
-  '/warehouse-construction-safety-net.webp',
+const heroSlides = [
+  { src: '/invisible-grills-balcony-evening-woman-standing.webp', service: 'Invisible Grills',   slug: 'invisible-grills' },
+  { src: '/invisible-grills-apartment-balcony-night.webp',         service: 'Invisible Grills',   slug: 'invisible-grills' },
+  { src: '/invisible-grills-balcony-night-city-view.webp',         service: 'Invisible Grills',   slug: 'invisible-grills' },
+  { src: '/pigeon-nets-balcony-corridor-net.webp',                  service: 'Pigeon Nets',        slug: 'pigeon-nets' },
+  { src: '/pigeon-nets-balcony-installation-greenery-view.webp',    service: 'Pigeon Nets',        slug: 'pigeon-nets' },
+  { src: '/safety-nets-balcony-child-safety-father-and-baby.webp',  service: 'Safety Nets',        slug: 'safety-nets' },
+  { src: '/cloth-hangers-ceiling-pulley-hanger-white-balcony.webp', service: 'Cloth Hangers',      slug: 'cloth-hangers' },
+  { src: '/sports-nets-indoor-turf-court-net-enclosure.webp',       service: 'Sports Nets',        slug: 'sports-nets' },
+  { src: '/duct-area-nets-installation-in-progress-shaft.webp',     service: 'Duct Area Nets',     slug: 'duct-area-nets' },
+  { src: '/staircase-nets-stairwell-net-installation.webp',         service: 'Staircase Nets',     slug: 'staircase-nets' },
+  { src: '/construction-nets-warehouse-roof-net.webp',              service: 'Construction Nets',  slug: 'construction-nets' },
 ]
 
 const trustPoints = [
-  { icon: Clock, label: '24×7 service' },
+  { icon: Clock,       label: '24×7 service' },
   { icon: ShieldCheck, label: 'Free site survey' },
-  { icon: Truck, label: 'All-India install' },
-  { icon: Layers, label: 'SS 316 steel' },
+  { icon: Truck,       label: 'All-India install' },
+  { icon: Layers,      label: 'SS 316 steel' },
 ]
 
 const stagger = {
@@ -41,18 +40,21 @@ export function Hero() {
   const [bgIdx, setBgIdx] = useState(0)
 
   useEffect(() => {
-    const t = setInterval(() => setBgIdx((i) => (i + 1) % heroImages.length), 4500)
+    const t = setInterval(() => setBgIdx((i) => (i + 1) % heroSlides.length), 4500)
     return () => clearInterval(t)
   }, [])
 
+  const current = heroSlides[bgIdx]
+
   return (
     <section aria-labelledby="hero-heading" className="relative isolate flex min-h-[85vh] flex-col sm:min-h-[92vh]">
+
       {/* Background slideshow */}
       <div className="absolute inset-0 -z-10">
-        {heroImages.map((src, i) => (
+        {heroSlides.map((slide, i) => (
           <img
-            key={src}
-            src={src}
+            key={slide.src}
+            src={slide.src}
             alt=""
             aria-hidden="true"
             fetchPriority={i === 0 ? 'high' : 'low'}
@@ -67,8 +69,30 @@ export function Hero() {
         <div className="absolute inset-0 cable-backdrop opacity-[0.06]" />
       </div>
 
-      {/* Content */}
-      <div className="container-page flex flex-1 items-end pb-8 pt-12 sm:items-center sm:py-24 lg:py-32">
+      {/* Service name badge — top right, changes with each slide */}
+      <div className="absolute right-5 top-5 z-10 sm:right-8 sm:top-8">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current.service}
+            initial={{ opacity: 0, y: -8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.95 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+          >
+            <Link
+              to={`/services/${current.slug}`}
+              className="inline-flex items-center gap-2 rounded-full border border-orange/50 bg-navy-deep/70 px-4 py-2 text-xs font-bold tracking-wide text-white backdrop-blur-md transition-colors hover:bg-orange hover:border-orange"
+            >
+              <span className="size-1.5 rounded-full bg-orange animate-pulse" />
+              {current.service}
+              <ArrowRight className="size-3 opacity-70" aria-hidden="true" />
+            </Link>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Main content */}
+      <div className="container-page flex flex-1 items-end pb-8 pt-16 sm:items-center sm:py-24 lg:py-32">
         <motion.div
           className="w-full max-w-2xl"
           variants={reduce ? undefined : stagger}
@@ -135,12 +159,12 @@ export function Hero() {
 
       {/* Slide dots */}
       <div className="container-page flex gap-1.5 pb-4">
-        {heroImages.map((_, i) => (
+        {heroSlides.map((slide, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setBgIdx(i)}
-            aria-label={`Background image ${i + 1}`}
+            aria-label={`${slide.service} image ${i + 1}`}
             className={`rounded-full transition-all duration-300 ${
               i === bgIdx ? 'h-1.5 w-5 bg-orange' : 'size-1.5 bg-white/30 hover:bg-white/60'
             }`}

@@ -16,6 +16,7 @@ const ServiceAreas = lazy(() =>
   import('@/pages/ServiceAreas').then((m) => ({ default: m.ServiceAreas })),
 )
 const NotFound = lazy(() => import('@/pages/NotFound').then((m) => ({ default: m.NotFound })))
+const ImageReview = lazy(() => import('@/pages/ImageReview').then((m) => ({ default: m.ImageReview })))
 
 function PageFallback() {
   return (
@@ -42,6 +43,7 @@ export function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/service-areas" element={<ServiceAreas />} />
+            <Route path="/image-review" element={<ImageReview />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
