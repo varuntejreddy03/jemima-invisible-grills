@@ -3,19 +3,20 @@ import { Phone, MessageCircle, ShieldCheck, Clock, Truck, Layers, ArrowRight } f
 import { motion, useReducedMotion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import { phoneHref, whatsappHref, BUSINESS } from '@/lib/constants'
-import { services } from '@/data/services'
 
 const heroImages = [
+  '/invisible-grill-balcony-evening.webp',
+  '/invisible-grill-apartment-balcony-night.webp',
   '/invisible-grill-balcony-night-view.webp',
-  '/invisible-grill-apartment-balcony.webp',
   '/premium-invisible-grill-balcony.webp',
   '/high-rise-invisible-grill-balcony.webp',
   '/glass-balcony-invisible-grill.webp',
-  '/balcony-pigeon-safety-net.webp',
+  '/balcony-pigeon-net-installation.webp',
   '/balcony-child-safety-net.webp',
-  '/duct-net-installation-1.webp',
+  '/duct-area-safety-net-installation.webp',
+  '/staircase-safety-net-installation.webp',
   '/sports-safety-net-installation.webp',
-  '/staircase-invisible-grill-installation.webp',
+  '/warehouse-construction-safety-net.webp',
 ]
 
 const trustPoints = [
@@ -74,7 +75,6 @@ export function Hero() {
           initial="hidden"
           animate="show"
         >
-          {/* Eyebrow */}
           <motion.div variants={reduce ? undefined : fadeUp} className="mb-4 inline-flex">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.12em] text-white/85 uppercase backdrop-blur-sm">
               <span className="size-1.5 animate-pulse rounded-full bg-orange" />
@@ -82,7 +82,6 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             variants={reduce ? undefined : fadeUp}
             id="hero-heading"
@@ -93,7 +92,6 @@ export function Hero() {
             Not fall through.
           </motion.h1>
 
-          {/* Sub-copy */}
           <motion.p
             variants={reduce ? undefined : fadeUp}
             className="mt-4 text-[15px] leading-relaxed text-white/70 sm:mt-5 sm:max-w-lg sm:text-lg"
@@ -101,7 +99,6 @@ export function Hero() {
             Invisible grills and safety nets — Chennai-based team, available 24×7, installed anywhere in India.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             variants={reduce ? undefined : fadeUp}
             className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:flex sm:flex-wrap"
@@ -124,7 +121,6 @@ export function Hero() {
             </a>
           </motion.div>
 
-          {/* Explore link */}
           <motion.div variants={reduce ? undefined : fadeUp} className="mt-4">
             <Link
               to="/services"
@@ -138,7 +134,7 @@ export function Hero() {
       </div>
 
       {/* Slide dots */}
-      <div className="container-page pb-4 flex gap-1.5">
+      <div className="container-page flex gap-1.5 pb-4">
         {heroImages.map((_, i) => (
           <button
             key={i}
@@ -146,7 +142,7 @@ export function Hero() {
             onClick={() => setBgIdx(i)}
             aria-label={`Background image ${i + 1}`}
             className={`rounded-full transition-all duration-300 ${
-              i === bgIdx ? 'w-5 h-1.5 bg-orange' : 'w-1.5 h-1.5 bg-white/30 hover:bg-white/60'
+              i === bgIdx ? 'h-1.5 w-5 bg-orange' : 'size-1.5 bg-white/30 hover:bg-white/60'
             }`}
           />
         ))}
