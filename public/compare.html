@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Image Comparison</title>
+<style>
+  body { margin: 0; background: #0f172a; color: #fff; font-family: sans-serif; }
+  h2 { padding: 16px 20px 4px; margin: 0; font-size: 13px; color: #f97316; text-transform: uppercase; letter-spacing: .1em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; padding: 8px 20px 24px; }
+  .card { background: #1e293b; border-radius: 10px; overflow: hidden; cursor: pointer; border: 2px solid transparent; }
+  .card:hover { border-color: #f97316; }
+  .card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+  .card p { font-size: 9px; color: #94a3b8; padding: 4px 6px; margin: 0; word-break: break-all; }
+  .card span { font-size: 9px; color: #64748b; padding: 0 6px 4px; display: block; }
+</style>
+</head>
+<body>
+<h2>invisible-grills (36)</h2><div class="grid">
+  <div class="card" title="/invisible-grills-apartment-balcony-night.webp">
+    <img src="/invisible-grills-apartment-balcony-night.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-apartment-balcony-night.webp</p>
+    <span>99 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-apartment-window-exterior.webp">
+    <img src="/invisible-grills-apartment-window-exterior.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-apartment-window-exterior.webp</p>
+    <span>147 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-balcony-customer-view.webp">
+    <img src="/invisible-grills-balcony-customer-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-balcony-customer-view.webp</p>
+    <span>162 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-balcony-evening-woman-standing.webp">
+    <img src="/invisible-grills-balcony-evening-woman-standing.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-balcony-evening-woman-standing.webp</p>
+    <span>115 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-balcony-night-city-view.webp">
+    <img src="/invisible-grills-balcony-night-city-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-balcony-night-city-view.webp</p>
+    <span>151 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-balcony-sea-facing-view.webp">
+    <img src="/invisible-grills-balcony-sea-facing-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-balcony-sea-facing-view.webp</p>
+    <span>80 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-balcony-wide-banner-view.webp">
+    <img src="/invisible-grills-balcony-wide-banner-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-balcony-wide-banner-view.webp</p>
+    <span>96 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-child-safe-balcony-lake-view.webp">
+    <img src="/invisible-grills-child-safe-balcony-lake-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-child-safe-balcony-lake-view.webp</p>
+    <span>204 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-corner-window-open-field-view.webp">
+    <img src="/invisible-grills-corner-window-open-field-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-corner-window-open-field-view.webp</p>
+    <span>119 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-glass-balcony-wooden-flooring.webp">
+    <img src="/invisible-grills-glass-balcony-wooden-flooring.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-glass-balcony-wooden-flooring.webp</p>
+    <span>261 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-high-rise-balcony-lake-view.webp">
+    <img src="/invisible-grills-high-rise-balcony-lake-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-high-rise-balcony-lake-view.webp</p>
+    <span>204 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-indoor-staircase-living-room.webp">
+    <img src="/invisible-grills-indoor-staircase-living-room.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-indoor-staircase-living-room.webp</p>
+    <span>111 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-indoor-stairs-hallway.webp">
+    <img src="/invisible-grills-indoor-stairs-hallway.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-indoor-stairs-hallway.webp</p>
+    <span>47 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-luxury-balcony-blue-glass-facade.webp">
+    <img src="/invisible-grills-luxury-balcony-blue-glass-facade.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-luxury-balcony-blue-glass-facade.webp</p>
+    <span>69 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-premium-balcony-wooden-deck.webp">
+    <img src="/invisible-grills-premium-balcony-wooden-deck.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-premium-balcony-wooden-deck.webp</p>
+    <span>233 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-sliding-window-city-view.webp">
+    <img src="/invisible-grills-sliding-window-city-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-sliding-window-city-view.webp</p>
+    <span>20 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-staircase-installation-apartment.webp">
+    <img src="/invisible-grills-staircase-installation-apartment.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-staircase-installation-apartment.webp</p>
+    <span>108 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-window-installation-city-outlook.webp">
+    <img src="/invisible-grills-window-installation-city-outlook.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-window-installation-city-outlook.webp</p>
+    <span>212 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-window-net-city-view.webp">
+    <img src="/invisible-grills-window-net-city-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-window-net-city-view.webp</p>
+    <span>97 KB</span>
+  </div>
+  <div class="card" title="/invisible-grill-2-1.webp">
+    <img src="/invisible-grill-2-1.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grill-2-1.webp</p>
+    <span>135 KB</span>
+  </div>
+  <div class="card" title="/invisible-grill-banner.webp">
+    <img src="/invisible-grill-banner.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grill-banner.webp</p>
+    <span>506 KB</span>
+  </div>
+  <div class="card" title="/invisible-grill-balcony-evening.webp">
+    <img src="/invisible-grill-balcony-evening.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grill-balcony-evening.webp</p>
+    <span>124 KB</span>
+  </div>
+  <div class="card" title="/invisible-grill-apartment-balcony-night.webp">
+    <img src="/invisible-grill-apartment-balcony-night.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grill-apartment-balcony-night.webp</p>
+    <span>106 KB</span>
+  </div>
+  <div class="card" title="/invisible-grill-balcony-night-view.webp">
+    <img src="/invisible-grill-balcony-night-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grill-balcony-night-view.webp</p>
+    <span>158 KB</span>
+  </div>
+  <div class="card" title="/premium-invisible-grill-balcony.webp">
+    <img src="/premium-invisible-grill-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>premium-invisible-grill-balcony.webp</p>
+    <span>241 KB</span>
+  </div>
+  <div class="card" title="/high-rise-invisible-grill-balcony.webp">
+    <img src="/high-rise-invisible-grill-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>high-rise-invisible-grill-balcony.webp</p>
+    <span>209 KB</span>
+  </div>
+  <div class="card" title="/glass-balcony-invisible-grill.webp">
+    <img src="/glass-balcony-invisible-grill.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>glass-balcony-invisible-grill.webp</p>
+    <span>267 KB</span>
+  </div>
+  <div class="card" title="/luxury-balcony-invisible-grill.webp">
+    <img src="/luxury-balcony-invisible-grill.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>luxury-balcony-invisible-grill.webp</p>
+    <span>74 KB</span>
+  </div>
+  <div class="card" title="/child-safe-invisible-grill-balcony.webp">
+    <img src="/child-safe-invisible-grill-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>child-safe-invisible-grill-balcony.webp</p>
+    <span>212 KB</span>
+  </div>
+  <div class="card" title="/apartment-window-invisible-grill.webp">
+    <img src="/apartment-window-invisible-grill.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>apartment-window-invisible-grill.webp</p>
+    <span>153 KB</span>
+  </div>
+  <div class="card" title="/window-invisible-grill-installation.webp">
+    <img src="/window-invisible-grill-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>window-invisible-grill-installation.webp</p>
+    <span>220 KB</span>
+  </div>
+  <div class="card" title="/window-invisible-grill-city-view.webp">
+    <img src="/window-invisible-grill-city-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>window-invisible-grill-city-view.webp</p>
+    <span>100 KB</span>
+  </div>
+  <div class="card" title="/corner-window-invisible-grill.webp">
+    <img src="/corner-window-invisible-grill.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>corner-window-invisible-grill.webp</p>
+    <span>126 KB</span>
+  </div>
+  <div class="card" title="/staircase-invisible-grill-installation.webp">
+    <img src="/staircase-invisible-grill-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>staircase-invisible-grill-installation.webp</p>
+    <span>113 KB</span>
+  </div>
+  <div class="card" title="/Invisible-Grill-Staircase4.webp">
+    <img src="/Invisible-Grill-Staircase4.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>Invisible-Grill-Staircase4.webp</p>
+    <span>238 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-net-hillside-view.webp">
+    <img src="/safety-nets-balcony-net-hillside-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-net-hillside-view.webp</p>
+    <span>12 KB</span>
+  </div>
+</div>
+<h2>pigeon-nets (20)</h2><div class="grid">
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM (3).jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM (3).jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.44 PM (3).jpeg</p>
+    <span>301 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-6.webp">
+    <img src="/gallery-new-6.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-6.webp</p>
+    <span>328 KB</span>
+  </div>
+  <div class="card" title="/invisible-grills-modern-balcony-city-skyline.webp">
+    <img src="/invisible-grills-modern-balcony-city-skyline.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-modern-balcony-city-skyline.webp</p>
+    <span>280 KB</span>
+  </div>
+  <div class="card" title="/modern-balcony-invisible-grill.webp">
+    <img src="/modern-balcony-invisible-grill.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>modern-balcony-invisible-grill.webp</p>
+    <span>285 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-ac-outdoor-unit-protection-net.webp">
+    <img src="/pigeon-nets-ac-outdoor-unit-protection-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-ac-outdoor-unit-protection-net.webp</p>
+    <span>21 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-balcony-installation-greenery-view.webp">
+    <img src="/pigeon-nets-balcony-installation-greenery-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-balcony-installation-greenery-view.webp</p>
+    <span>302 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-balcony-net-city-view.webp">
+    <img src="/pigeon-nets-balcony-net-city-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-balcony-net-city-view.webp</p>
+    <span>195 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-bird-blocked-by-window-net.webp">
+    <img src="/pigeon-nets-bird-blocked-by-window-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-bird-blocked-by-window-net.webp</p>
+    <span>55 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-building-window-nets-elevation.webp">
+    <img src="/pigeon-nets-building-window-nets-elevation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-building-window-nets-elevation.webp</p>
+    <span>123 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-open-corridor-installation.webp">
+    <img src="/pigeon-nets-open-corridor-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-open-corridor-installation.webp</p>
+    <span>236 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-pigeons-on-balcony-railing.webp">
+    <img src="/pigeon-nets-pigeons-on-balcony-railing.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-pigeons-on-balcony-railing.webp</p>
+    <span>70 KB</span>
+  </div>
+  <div class="card" title="/apartment-pigeon-net-balcony.webp">
+    <img src="/apartment-pigeon-net-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>apartment-pigeon-net-balcony.webp</p>
+    <span>209 KB</span>
+  </div>
+  <div class="card" title="/balcony-pigeon-net-installation.webp">
+    <img src="/balcony-pigeon-net-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>balcony-pigeon-net-installation.webp</p>
+    <span>314 KB</span>
+  </div>
+  <div class="card" title="/balcony-pigeon-safety-net.webp">
+    <img src="/balcony-pigeon-safety-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>balcony-pigeon-safety-net.webp</p>
+    <span>263 KB</span>
+  </div>
+  <div class="card" title="/corridor-pigeon-net-installation.webp">
+    <img src="/corridor-pigeon-net-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>corridor-pigeon-net-installation.webp</p>
+    <span>240 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-net-garden-view.webp">
+    <img src="/safety-nets-balcony-net-garden-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-net-garden-view.webp</p>
+    <span>324 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-installer-fitting-corridor-net.webp">
+    <img src="/safety-nets-installer-fitting-corridor-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-installer-fitting-corridor-net.webp</p>
+    <span>62 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-6.jpg.jpeg">
+    <img src="/safety-nets-6.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-6.jpg.jpeg</p>
+    <span>267 KB</span>
+  </div>
+  <div class="card" title="/w1.jpg.jpeg">
+    <img src="/w1.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>w1.jpg.jpeg</p>
+    <span>289 KB</span>
+  </div>
+  <div class="card" title="/w2.jpg.jpeg">
+    <img src="/w2.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>w2.jpg.jpeg</p>
+    <span>168 KB</span>
+  </div>
+</div>
+<h2>safety-nets (20)</h2><div class="grid">
+  <div class="card" title="/invisible-grills-apartment-balcony-high-rise-view.webp">
+    <img src="/invisible-grills-apartment-balcony-high-rise-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grills-apartment-balcony-high-rise-view.webp</p>
+    <span>207 KB</span>
+  </div>
+  <div class="card" title="/invisible-grill-apartment-balcony.webp">
+    <img src="/invisible-grill-apartment-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>invisible-grill-apartment-balcony.webp</p>
+    <span>209 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-apartment-balcony-city-view.webp">
+    <img src="/pigeon-nets-apartment-balcony-city-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-apartment-balcony-city-view.webp</p>
+    <span>91 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-apartment-balcony-with-plants.webp">
+    <img src="/pigeon-nets-apartment-balcony-with-plants.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-apartment-balcony-with-plants.webp</p>
+    <span>201 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-installer-fitting-balcony-net.webp">
+    <img src="/pigeon-nets-installer-fitting-balcony-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-installer-fitting-balcony-net.webp</p>
+    <span>57 KB</span>
+  </div>
+  <div class="card" title="/apartment-pigeon-safety-net.webp">
+    <img src="/apartment-pigeon-safety-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>apartment-pigeon-safety-net.webp</p>
+    <span>93 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-child-safety-father-and-baby.webp">
+    <img src="/safety-nets-balcony-child-safety-father-and-baby.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-child-safety-father-and-baby.webp</p>
+    <span>156 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-green-net-with-plants.webp">
+    <img src="/safety-nets-balcony-green-net-with-plants.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-green-net-with-plants.webp</p>
+    <span>153 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-net-apartment-view.webp">
+    <img src="/safety-nets-balcony-net-apartment-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-net-apartment-view.webp</p>
+    <span>101 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-net-installer-at-work.webp">
+    <img src="/safety-nets-balcony-net-installer-at-work.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-net-installer-at-work.webp</p>
+    <span>64 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-net-tree-view.webp">
+    <img src="/safety-nets-balcony-net-tree-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-net-tree-view.webp</p>
+    <span>199 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-cat-pet-safety-window-net.webp">
+    <img src="/safety-nets-cat-pet-safety-window-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-cat-pet-safety-window-net.webp</p>
+    <span>32 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-child-at-balcony-railing.webp">
+    <img src="/safety-nets-child-at-balcony-railing.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-child-at-balcony-railing.webp</p>
+    <span>47 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-child-behind-balcony-net.webp">
+    <img src="/safety-nets-child-behind-balcony-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-child-behind-balcony-net.webp</p>
+    <span>51 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-corridor-net-with-installer.webp">
+    <img src="/safety-nets-corridor-net-with-installer.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-corridor-net-with-installer.webp</p>
+    <span>50 KB</span>
+  </div>
+  <div class="card" title="/balcony-child-safety-net.webp">
+    <img src="/balcony-child-safety-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>balcony-child-safety-net.webp</p>
+    <span>159 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-1.jpg.jpeg">
+    <img src="/safety-nets-1.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-1.jpg.jpeg</p>
+    <span>167 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-4.jpg.jpeg">
+    <img src="/safety-nets-4.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-4.jpg.jpeg</p>
+    <span>209 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-5.jpg.jpeg">
+    <img src="/safety-nets-5.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-5.jpg.jpeg</p>
+    <span>172 KB</span>
+  </div>
+  <div class="card" title="/children-1.jpg.jpeg">
+    <img src="/children-1.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>children-1.jpg.jpeg</p>
+    <span>79 KB</span>
+  </div>
+</div>
+<h2>cloth-hangers (19)</h2><div class="grid">
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.42 PM.jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.42 PM.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.42 PM.jpeg</p>
+    <span>43 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.43 PM.jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.43 PM.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.43 PM.jpeg</p>
+    <span>97 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM (1).jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM (1).jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.45 PM (1).jpeg</p>
+    <span>211 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM (2).jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM (2).jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.45 PM (2).jpeg</p>
+    <span>217 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM (3).jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM (3).jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.45 PM (3).jpeg</p>
+    <span>191 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM.jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.45 PM.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.45 PM.jpeg</p>
+    <span>109 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-1.webp">
+    <img src="/gallery-new-1.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-1.webp</p>
+    <span>23 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-3.webp">
+    <img src="/gallery-new-3.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-3.webp</p>
+    <span>72 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-8.webp">
+    <img src="/gallery-new-8.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-8.webp</p>
+    <span>164 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-9.webp">
+    <img src="/gallery-new-9.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-9.webp</p>
+    <span>141 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-10.webp">
+    <img src="/gallery-new-10.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-10.webp</p>
+    <span>126 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-11.webp">
+    <img src="/gallery-new-11.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-11.webp</p>
+    <span>72 KB</span>
+  </div>
+  <div class="card" title="/cloth-hangers-balcony-ceiling-hanger-near-ac-unit.webp">
+    <img src="/cloth-hangers-balcony-ceiling-hanger-near-ac-unit.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cloth-hangers-balcony-ceiling-hanger-near-ac-unit.webp</p>
+    <span>69 KB</span>
+  </div>
+  <div class="card" title="/cloth-hangers-balcony-hanger-with-clothes-drying.webp">
+    <img src="/cloth-hangers-balcony-hanger-with-clothes-drying.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cloth-hangers-balcony-hanger-with-clothes-drying.webp</p>
+    <span>138 KB</span>
+  </div>
+  <div class="card" title="/cloth-hangers-ceiling-hanger-narrow-balcony.webp">
+    <img src="/cloth-hangers-ceiling-hanger-narrow-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cloth-hangers-ceiling-hanger-narrow-balcony.webp</p>
+    <span>69 KB</span>
+  </div>
+  <div class="card" title="/cloth-hangers-ceiling-pulley-hanger-white-balcony.webp">
+    <img src="/cloth-hangers-ceiling-pulley-hanger-white-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cloth-hangers-ceiling-pulley-hanger-white-balcony.webp</p>
+    <span>21 KB</span>
+  </div>
+  <div class="card" title="/cloth-hangers-wall-mounted-drying-rack-window.webp">
+    <img src="/cloth-hangers-wall-mounted-drying-rack-window.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cloth-hangers-wall-mounted-drying-rack-window.webp</p>
+    <span>6 KB</span>
+  </div>
+  <div class="card" title="/cloth-hangers-wooden-ceiling-balcony-hanger.webp">
+    <img src="/cloth-hangers-wooden-ceiling-balcony-hanger.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cloth-hangers-wooden-ceiling-balcony-hanger.webp</p>
+    <span>157 KB</span>
+  </div>
+  <div class="card" title="/cloth-hangers-wooden-ceiling-hanger-open-balcony.webp">
+    <img src="/cloth-hangers-wooden-ceiling-hanger-open-balcony.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cloth-hangers-wooden-ceiling-hanger-open-balcony.webp</p>
+    <span>118 KB</span>
+  </div>
+</div>
+<h2>sports-nets (13)</h2><div class="grid">
+  <div class="card" title="/sports-safety-net-installation.webp">
+    <img src="/sports-safety-net-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-safety-net-installation.webp</p>
+    <span>44 KB</span>
+  </div>
+  <div class="card" title="/sports-nets-cricket-practice-cage-outdoor.webp">
+    <img src="/sports-nets-cricket-practice-cage-outdoor.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-nets-cricket-practice-cage-outdoor.webp</p>
+    <span>39 KB</span>
+  </div>
+  <div class="card" title="/sports-nets-cricket-practice-ground-cage.webp">
+    <img src="/sports-nets-cricket-practice-ground-cage.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-nets-cricket-practice-ground-cage.webp</p>
+    <span>158 KB</span>
+  </div>
+  <div class="card" title="/sports-nets-cricket-practice-net-batsman.webp">
+    <img src="/sports-nets-cricket-practice-net-batsman.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-nets-cricket-practice-net-batsman.webp</p>
+    <span>70 KB</span>
+  </div>
+  <div class="card" title="/sports-nets-football-turf-boundary-net.webp">
+    <img src="/sports-nets-football-turf-boundary-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-nets-football-turf-boundary-net.webp</p>
+    <span>58 KB</span>
+  </div>
+  <div class="card" title="/sports-nets-indoor-cricket-practice-session.webp">
+    <img src="/sports-nets-indoor-cricket-practice-session.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-nets-indoor-cricket-practice-session.webp</p>
+    <span>94 KB</span>
+  </div>
+  <div class="card" title="/sports-nets-indoor-turf-court-enclosure.webp">
+    <img src="/sports-nets-indoor-turf-court-enclosure.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-nets-indoor-turf-court-enclosure.webp</p>
+    <span>43 KB</span>
+  </div>
+  <div class="card" title="/sports-nets-outdoor-cricket-practice-cage.webp">
+    <img src="/sports-nets-outdoor-cricket-practice-cage.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>sports-nets-outdoor-cricket-practice-cage.webp</p>
+    <span>79 KB</span>
+  </div>
+  <div class="card" title="/Secure-Netting-Offers-Quality-Nets-for-Cricket-Practice-in-Port-Blair-and-Throughout-Andaman-Nicobar-Island.webp">
+    <img src="/Secure-Netting-Offers-Quality-Nets-for-Cricket-Practice-in-Port-Blair-and-Throughout-Andaman-Nicobar-Island.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>Secure-Netting-Offers-Quality-Nets-for-Cricket-Practice-in-Port-Blair-and-Throughout-Andaman-Nicobar-Island.webp</p>
+    <span>35 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-2.jpg.jpeg">
+    <img src="/safety-nets-2.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-2.jpg.jpeg</p>
+    <span>131 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-8.jpg.jpeg">
+    <img src="/safety-nets-8.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-8.jpg.jpeg</p>
+    <span>206 KB</span>
+  </div>
+  <div class="card" title="/cricket1.jpg.jpeg">
+    <img src="/cricket1.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>cricket1.jpg.jpeg</p>
+    <span>315 KB</span>
+  </div>
+  <div class="card" title="/w3.jpg.jpeg">
+    <img src="/w3.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>w3.jpg.jpeg</p>
+    <span>414 KB</span>
+  </div>
+</div>
+<h2>duct-area-nets (21)</h2><div class="grid">
+  <div class="card" title="/pigeon-nets-installer-on-building-facade.webp">
+    <img src="/pigeon-nets-installer-on-building-facade.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-installer-on-building-facade.webp</p>
+    <span>64 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-bird-proofing-between-buildings.webp">
+    <img src="/duct-area-nets-bird-proofing-between-buildings.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-bird-proofing-between-buildings.webp</p>
+    <span>204 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-green-net-between-buildings.webp">
+    <img src="/duct-area-nets-green-net-between-buildings.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-green-net-between-buildings.webp</p>
+    <span>233 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-green-net-over-shaft-top-view.webp">
+    <img src="/duct-area-nets-green-net-over-shaft-top-view.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-green-net-over-shaft-top-view.webp</p>
+    <span>76 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-green-net-shaft-enclosure.webp">
+    <img src="/duct-area-nets-green-net-shaft-enclosure.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-green-net-shaft-enclosure.webp</p>
+    <span>41 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-green-net-shaft-multi-floor.webp">
+    <img src="/duct-area-nets-green-net-shaft-multi-floor.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-green-net-shaft-multi-floor.webp</p>
+    <span>260 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-rope-access-installation-high-rise.webp">
+    <img src="/duct-area-nets-rope-access-installation-high-rise.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-rope-access-installation-high-rise.webp</p>
+    <span>272 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-terrace-duct-grating-cover.webp">
+    <img src="/duct-area-nets-terrace-duct-grating-cover.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-terrace-duct-grating-cover.webp</p>
+    <span>382 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-wall-shaft-net-closeup.webp">
+    <img src="/duct-area-nets-wall-shaft-net-closeup.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-wall-shaft-net-closeup.webp</p>
+    <span>442 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-white-net-box-over-shaft.webp">
+    <img src="/duct-area-nets-white-net-box-over-shaft.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-white-net-box-over-shaft.webp</p>
+    <span>148 KB</span>
+  </div>
+  <div class="card" title="/duct-net-installation-2.webp">
+    <img src="/duct-net-installation-2.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-net-installation-2.webp</p>
+    <span>386 KB</span>
+  </div>
+  <div class="card" title="/duct-net-installation-3.webp">
+    <img src="/duct-net-installation-3.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-net-installation-3.webp</p>
+    <span>463 KB</span>
+  </div>
+  <div class="card" title="/duct-net-installation-4.webp">
+    <img src="/duct-net-installation-4.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-net-installation-4.webp</p>
+    <span>276 KB</span>
+  </div>
+  <div class="card" title="/duct-net-installation-5.webp">
+    <img src="/duct-net-installation-5.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-net-installation-5.webp</p>
+    <span>240 KB</span>
+  </div>
+  <div class="card" title="/duct-net-installation-6.webp">
+    <img src="/duct-net-installation-6.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-net-installation-6.webp</p>
+    <span>265 KB</span>
+  </div>
+  <div class="card" title="/duct-net-installation-7.webp">
+    <img src="/duct-net-installation-7.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-net-installation-7.webp</p>
+    <span>153 KB</span>
+  </div>
+  <div class="card" title="/construction-nets-green-net-over-building-structure.webp">
+    <img src="/construction-nets-green-net-over-building-structure.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>construction-nets-green-net-over-building-structure.webp</p>
+    <span>43 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-3.jpg.jpeg">
+    <img src="/safety-nets-3.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-3.jpg.jpeg</p>
+    <span>177 KB</span>
+  </div>
+  <div class="card" title="/duct-slider.jpg.jpeg">
+    <img src="/duct-slider.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-slider.jpg.jpeg</p>
+    <span>763 KB</span>
+  </div>
+  <div class="card" title="/duct.jpg.jpeg">
+    <img src="/duct.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct.jpg.jpeg</p>
+    <span>220 KB</span>
+  </div>
+  <div class="card" title="/ser3.jpeg">
+    <img src="/ser3.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>ser3.jpeg</p>
+    <span>120 KB</span>
+  </div>
+</div>
+<h2>staircase-nets (14)</h2><div class="grid">
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.43 PM (1).jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.43 PM (1).jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.43 PM (1).jpeg</p>
+    <span>353 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM (1).jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM (1).jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.44 PM (1).jpeg</p>
+    <span>317 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM (2).jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM (2).jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.44 PM (2).jpeg</p>
+    <span>93 KB</span>
+  </div>
+  <div class="card" title="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM.jpeg">
+    <img src="/gallery/WhatsApp Image 2026-07-27 at 6.58.44 PM.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>WhatsApp Image 2026-07-27 at 6.58.44 PM.jpeg</p>
+    <span>264 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-2.webp">
+    <img src="/gallery-new-2.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-2.webp</p>
+    <span>353 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-4.webp">
+    <img src="/gallery-new-4.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-4.webp</p>
+    <span>220 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-5.webp">
+    <img src="/gallery-new-5.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-5.webp</p>
+    <span>104 KB</span>
+  </div>
+  <div class="card" title="/gallery-new-7.webp">
+    <img src="/gallery-new-7.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>gallery-new-7.webp</p>
+    <span>241 KB</span>
+  </div>
+  <div class="card" title="/pigeon-nets-bedroom-window-net-installation.webp">
+    <img src="/pigeon-nets-bedroom-window-net-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>pigeon-nets-bedroom-window-net-installation.webp</p>
+    <span>233 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-balcony-green-net-installation.webp">
+    <img src="/safety-nets-balcony-green-net-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-balcony-green-net-installation.webp</p>
+    <span>58 KB</span>
+  </div>
+  <div class="card" title="/duct-area-nets-installation-in-progress-shaft.webp">
+    <img src="/duct-area-nets-installation-in-progress-shaft.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>duct-area-nets-installation-in-progress-shaft.webp</p>
+    <span>217 KB</span>
+  </div>
+  <div class="card" title="/staircase-nets-spiral-staircase-net-cover.webp">
+    <img src="/staircase-nets-spiral-staircase-net-cover.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>staircase-nets-spiral-staircase-net-cover.webp</p>
+    <span>101 KB</span>
+  </div>
+  <div class="card" title="/staircase-nets-stairwell-net-installation.webp">
+    <img src="/staircase-nets-stairwell-net-installation.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>staircase-nets-stairwell-net-installation.webp</p>
+    <span>346 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-11.jpg.jpeg">
+    <img src="/safety-nets-11.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-11.jpg.jpeg</p>
+    <span>258 KB</span>
+  </div>
+</div>
+<h2>construction-nets (6)</h2><div class="grid">
+  <div class="card" title="/construction-nets-industrial-roof-net.webp">
+    <img src="/construction-nets-industrial-roof-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>construction-nets-industrial-roof-net.webp</p>
+    <span>78 KB</span>
+  </div>
+  <div class="card" title="/construction-nets-industrial-shed-roof-net.webp">
+    <img src="/construction-nets-industrial-shed-roof-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>construction-nets-industrial-shed-roof-net.webp</p>
+    <span>234 KB</span>
+  </div>
+  <div class="card" title="/construction-nets-scaffolding-green-net-facade.webp">
+    <img src="/construction-nets-scaffolding-green-net-facade.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>construction-nets-scaffolding-green-net-facade.webp</p>
+    <span>31 KB</span>
+  </div>
+  <div class="card" title="/construction-nets-warehouse-open-side-net.webp">
+    <img src="/construction-nets-warehouse-open-side-net.webp" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>construction-nets-warehouse-open-side-net.webp</p>
+    <span>55 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-9.jpg.jpeg">
+    <img src="/safety-nets-9.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-9.jpg.jpeg</p>
+    <span>226 KB</span>
+  </div>
+  <div class="card" title="/safety-nets-12.jpg.jpeg">
+    <img src="/safety-nets-12.jpg.jpeg" loading="lazy" onerror="this.style.background='#334155';this.style.height='135px'">
+    <p>safety-nets-12.jpg.jpeg</p>
+    <span>175 KB</span>
+  </div>
+</div>
+</body></html>
