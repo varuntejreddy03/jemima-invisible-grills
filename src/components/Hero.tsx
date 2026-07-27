@@ -10,11 +10,11 @@ const heroSlides = [
   { src: '/invisible-grills-balcony-night-city-view.webp',         service: 'Invisible Grills',   slug: 'invisible-grills' },
   { src: '/pigeon-nets-balcony-corridor-net.webp',                  service: 'Pigeon Nets',        slug: 'pigeon-nets' },
   { src: '/pigeon-nets-balcony-installation-greenery-view.webp',    service: 'Pigeon Nets',        slug: 'pigeon-nets' },
-  { src: '/safety-nets-balcony-child-safety-father-and-baby.webp',  service: 'Safety Nets',        slug: 'safety-nets' },
+  { src: '/safety-nets-balcony-net-apartment-view.webp',            service: 'Safety Nets',        slug: 'safety-nets' },
   { src: '/cloth-hangers-ceiling-pulley-hanger-white-balcony.webp', service: 'Cloth Hangers',      slug: 'cloth-hangers' },
-  { src: '/sports-nets-indoor-turf-court-net-enclosure.webp',       service: 'Sports Nets',        slug: 'sports-nets' },
-  { src: '/duct-area-nets-installation-in-progress-shaft.webp',     service: 'Duct Area Nets',     slug: 'duct-area-nets' },
-  { src: '/staircase-nets-stairwell-net-installation.webp',         service: 'Staircase Nets',     slug: 'staircase-nets' },
+  { src: '/sports-nets-indoor-turf-court-enclosure.webp',           service: 'Sports Nets',        slug: 'sports-nets' },
+  { src: '/duct-area-nets-green-net-shaft-multi-floor.webp',        service: 'Duct Area Nets',     slug: 'duct-area-nets' },
+  { src: '/invisible-grills-indoor-staircase-living-room.webp',     service: 'Staircase Nets',     slug: 'staircase-nets' },
   { src: '/construction-nets-warehouse-roof-net.webp',              service: 'Construction Nets',  slug: 'construction-nets' },
 ]
 
