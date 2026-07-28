@@ -4,10 +4,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import {
   CheckCircle2, Mail, User, Phone as PhoneIcon,
-  MapPin, Layers, Hash, MessageSquare, MessageCircle, Send,
+  MapPin, Layers, Hash, MessageSquare, MessageCircle,
 } from 'lucide-react'
 import { services } from '@/data/services'
-import { BUSINESS, buildWhatsappUrl } from '@/lib/constants'
+import { BUSINESS } from '@/lib/constants'
 
 const enquirySchema = z.object({
   name: z.string().trim().min(2, 'Enter your name'),
@@ -26,20 +26,6 @@ type EnquiryFormValues = z.infer<typeof enquirySchema>
 type EnquiryFormProps = {
   defaultService?: string
   compact?: boolean
-}
-
-function buildMessage(values: EnquiryFormValues): string {
-  const serviceName = services.find((s) => s.slug === values.service)?.name ?? values.service
-  const lines = [
-    `Hi Jemima, I would like a free site survey and quote.`,
-    `Name: ${values.name}`,
-    `Phone: ${values.phone}`,
-    `Locality/City: ${values.locality}`,
-    `Service needed: ${serviceName}`,
-    `Balconies/windows: ${values.openingCount}`,
-  ]
-  if (values.message) lines.push(`Message: ${values.message}`)
-  return lines.join('\n')
 }
 
 type FieldProps = {
@@ -75,7 +61,6 @@ const inputError = `${inputBase} border-red-400 focus:ring-red-200 focus:border-
 
 export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProps) {
   const [submitted, setSubmitted] = useState(false)
-  const [mailtoHref, setMailtoHref] = useState('')
 
   const {
     register,
@@ -87,13 +72,8 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
     defaultValues: { service: defaultService ?? '' },
   })
 
-  const onSubmit = (values: EnquiryFormValues) => {
-    const message = buildMessage(values)
-    const whatsappUrl = buildWhatsappUrl(message)
-    setMailtoHref(
-      `mailto:${BUSINESS.email}?subject=${encodeURIComponent('Site survey request')}&body=${encodeURIComponent(message)}`,
-    )
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+  const onSubmit = (_values: EnquiryFormValues) => {
+    window.open(`https://wa.me/${BUSINESS.whatsappNumber}`, '_blank', 'noopener,noreferrer')
     setSubmitted(true)
     reset({ service: defaultService ?? '', name: '', phone: '', locality: '', openingCount: '', message: '' })
   }
@@ -107,11 +87,11 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
         </div>
         <h3 className="font-display text-base font-bold text-navy-deep">WhatsApp opened!</h3>
         <p className="mt-1.5 text-sm text-navy-deep/65">
-          Your details are pre-filled — just hit send. We'll reply within the hour.
+          We'll reply within the hour.
         </p>
         <div className="mt-5 flex flex-col gap-2.5">
           <a
-            href={mailtoHref}
+            href={`mailto:${BUSINESS.email}`}
             className="flex items-center justify-center gap-2 rounded-xl border border-steel/25 bg-white px-4 py-2.5 text-sm font-semibold text-navy-deep transition-colors hover:border-orange/30 hover:text-orange"
           >
             <Mail className="size-4" aria-hidden="true" />
@@ -217,7 +197,6 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
       >
         <MessageCircle className="size-4 transition-transform duration-200 group-hover:scale-110" aria-hidden="true" />
         Send via WhatsApp
-        <Send className="size-3.5 opacity-60" aria-hidden="true" />
       </button>
 
       <p className="text-center text-[11px] text-steel/70">

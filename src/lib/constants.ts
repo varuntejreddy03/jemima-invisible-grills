@@ -19,6 +19,4 @@ export function buildWhatsappUrl(message: string): string {
   return `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(message)}`
 }
 
-export const whatsappHref = buildWhatsappUrl(
-  `Hi Jemima, I would like a free site survey and quote for invisible grills / safety nets.`,
-)
+export const whatsappHref = `https://wa.me/${BUSINESS.whatsappNumber}`

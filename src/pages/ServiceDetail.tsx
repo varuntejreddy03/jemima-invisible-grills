@@ -15,7 +15,7 @@ import { Lightbox } from '@/components/Lightbox'
 import { ServiceCard } from '@/components/ServiceCard'
 import { Reveal } from '@/components/Reveal'
 import { getServiceBySlug } from '@/data/services'
-import { phoneHref, buildWhatsappUrl } from '@/lib/constants'
+import { phoneHref, BUSINESS } from '@/lib/constants'
 import { buildFaqSchema, buildBreadcrumbSchema } from '@/lib/seo-schema'
 
 const trustPoints = [
@@ -39,9 +39,7 @@ export function ServiceDetail() {
   const relatedServices = service.relatedSlugs
     .map((s) => getServiceBySlug(s))
     .filter((s): s is NonNullable<typeof s> => Boolean(s))
-  const whatsappUrl = buildWhatsappUrl(
-    `Hi Jemima, I'm interested in ${service.name}. Please share pricing and next steps.`,
-  )
+  const whatsappUrl = `https://wa.me/${BUSINESS.whatsappNumber}`
 
   return (
     <>
