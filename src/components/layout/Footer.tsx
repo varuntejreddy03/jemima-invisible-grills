@@ -158,7 +158,20 @@ export function Footer() {
       <div className="border-t border-white/8">
         <div className="container-page flex flex-col gap-2 py-5 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
           <p>© {year} {BUSINESS.name}. All rights reserved.</p>
-          <p>Serving all over India from {BUSINESS.city}.</p>
+          <a
+            href="https://staffarc.in"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+          >
+            <span className="text-white/35">Made with ♥ by</span>
+            <img
+              src="https://www.staffarc.in/images/Staffarc-logo.png"
+              alt="StaffArc"
+              className="h-4 w-auto"
+            />
+            <span className="font-semibold text-orange">StaffArc</span>
+          </a>
         </div>
       </div>
 
