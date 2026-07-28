@@ -72,8 +72,18 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
     defaultValues: { service: defaultService ?? '' },
   })
 
-  const onSubmit = (_values: EnquiryFormValues) => {
-    window.open(`https://wa.me/${BUSINESS.whatsappNumber}`, '_blank', 'noopener,noreferrer')
+  const onSubmit = (values: EnquiryFormValues) => {
+    const serviceName = services.find((s) => s.slug === values.service)?.name ?? values.service
+    const lines = [
+      `Name: ${values.name}`,
+      `Phone: ${values.phone}`,
+      `Location: ${values.locality}`,
+      `Service: ${serviceName}`,
+      `Openings: ${values.openingCount}`,
+    ]
+    if (values.message) lines.push(`Note: ${values.message}`)
+    const url = `https://wa.me/${BUSINESS.whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`
+    window.open(url, '_blank', 'noopener,noreferrer')
     setSubmitted(true)
     reset({ service: defaultService ?? '', name: '', phone: '', locality: '', openingCount: '', message: '' })
   }
