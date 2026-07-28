@@ -73,8 +73,12 @@ export function Header() {
       >
         <div className="container-page flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex shrink-0 items-center gap-2" aria-label={`${BUSINESS.name} — home`}>
+          <Link to="/" className="flex shrink-0 items-center gap-3" aria-label={`${BUSINESS.name} — home`}>
             <img src="/logo.png" alt="" width={970} height={924} className="h-10 w-auto" />
+            <div className="hidden flex-col sm:flex">
+              <span className="text-[15px] font-extrabold leading-tight tracking-tight text-navy-deep">Jemima</span>
+              <span className="text-[10px] font-semibold tracking-[0.15em] text-orange uppercase">Invisible Grills & Nets</span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
