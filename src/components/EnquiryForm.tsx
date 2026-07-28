@@ -11,10 +11,7 @@ import { BUSINESS } from '@/lib/constants'
 
 const enquirySchema = z.object({
   name: z.string().trim().min(2, 'Enter your name'),
-  phone: z
-    .string()
-    .trim()
-    .regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit mobile number'),
+  phone: z.string().trim().regex(/^[6-9]\d{9}$/, 'Enter a valid 10-digit mobile number'),
   locality: z.string().trim().min(2, 'Enter your locality / city'),
   service: z.string().min(1, 'Select a service'),
   openingCount: z.string().trim().min(1, 'Enter number of openings'),
@@ -88,7 +85,6 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
     reset({ service: defaultService ?? '', name: '', phone: '', locality: '', openingCount: '', message: '' })
   }
 
-  /* ── Success state ── */
   if (submitted) {
     return (
       <div className="rounded-2xl border border-green-100 bg-green-50 p-6 text-center" role="status">
@@ -96,9 +92,7 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
           <CheckCircle2 className="size-7 text-green-600" aria-hidden="true" />
         </div>
         <h3 className="font-display text-base font-bold text-navy-deep">WhatsApp opened!</h3>
-        <p className="mt-1.5 text-sm text-navy-deep/65">
-          We'll reply within the hour.
-        </p>
+        <p className="mt-1.5 text-sm text-navy-deep/65">We'll reply within the hour.</p>
         <div className="mt-5 flex flex-col gap-2.5">
           <a
             href={`mailto:${BUSINESS.email}`}
@@ -119,11 +113,9 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
     )
   }
 
-  /* ── Form ── */
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className={compact ? 'space-y-3.5' : 'space-y-4'}>
 
-      {/* Name + Phone side by side */}
       <div className="grid grid-cols-2 gap-3">
         <Field id="ef-name" label="Name" icon={<User className="size-3.5" />} error={errors.name?.message}>
           <input
@@ -199,7 +191,6 @@ export function EnquiryForm({ defaultService, compact = false }: EnquiryFormProp
         </Field>
       )}
 
-      {/* Submit */}
       <button
         type="submit"
         disabled={isSubmitting}
